@@ -15,6 +15,16 @@ class RegisViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onRegisClick(_ sender: Any) {
+        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
+                let mainPageView = nextView as! TabViewController
+            
+                // passing data
+
+                navigationController?.setViewControllers([mainPageView], animated: true)
+        }
+    }
+    
 
     @IBAction func onLoginClick(_ sender: Any) {
         if let nextView = storyboard?.instantiateViewController(withIdentifier: "LoginPage") {

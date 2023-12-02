@@ -53,7 +53,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                 <connections>
-                                    <segue destination="f8h-ax-Jfj" kind="show" id="yxy-cc-0XX"/>
+                                    <action selector="onLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iAC-FX-7Rl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yx2-lP-Fpc">
@@ -152,7 +152,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Register"/>
                                 <connections>
-                                    <segue destination="f8h-ax-Jfj" kind="show" id="2GB-hx-rto"/>
+                                    <action selector="onRegisClick:" destination="TFI-jl-6tg" eventType="touchUpInside" id="au9-pD-IcZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVh-hl-RgF">
@@ -233,13 +233,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greeting Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vH7-29-DLc">
-                                <rect key="frame" x="18" y="121" width="350" height="26"/>
+                                <rect key="frame" x="18" y="77" width="350" height="26"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ym-F1-44D">
-                                <rect key="frame" x="16" y="155" width="361" height="614"/>
+                                <rect key="frame" x="16" y="111" width="361" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ycm-7O-heg">
@@ -271,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="2612.9770992366412" y="-349.29577464788736"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="G5d-US-y0q">
             <objects>
-                <tabBarController id="f8h-ax-Jfj" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainPage" id="f8h-ax-Jfj" customClass="TabViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hb1-MZ-wov"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ga4-g3-D4e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -291,9 +291,6 @@
             <point key="canvasLocation" x="1682" y="-45"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="yxy-cc-0XX"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="logo_gameHI" width="500" height="500"/>
