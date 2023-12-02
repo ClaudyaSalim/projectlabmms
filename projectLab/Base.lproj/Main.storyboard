@@ -341,56 +341,6 @@
             </objects>
             <point key="canvasLocation" x="1682" y="-45"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="CbC-n0-zQM">
-            <objects>
-                <viewController id="3rd-Le-DS5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AjR-1S-Zcv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUQ-PG-8fy">
-                                <rect key="frame" x="0.0" y="0.0" width="175" height="158"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mro-SZ-GyC">
-                                <rect key="frame" x="262" y="69" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqp-6I-DU2">
-                                <rect key="frame" x="265" y="107" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="AccentColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEE-pI-3ML">
-                                <rect key="frame" x="265" y="29" width="52" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="KeY-64-cND"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Sqp-6I-DU2" secondAttribute="trailing" constant="73" id="3AY-Ni-7V2"/>
-                            <constraint firstItem="Sqp-6I-DU2" firstAttribute="top" secondItem="Mro-SZ-GyC" secondAttribute="bottom" constant="17" id="4OX-KS-Fzb"/>
-                            <constraint firstItem="Mro-SZ-GyC" firstAttribute="leading" secondItem="jUQ-PG-8fy" secondAttribute="trailing" constant="15" id="4gC-n0-LON"/>
-                            <constraint firstItem="cEE-pI-3ML" firstAttribute="top" secondItem="AjR-1S-Zcv" secondAttribute="topMargin" constant="-30" id="KRx-TY-pQy"/>
-                            <constraint firstItem="Mro-SZ-GyC" firstAttribute="top" secondItem="cEE-pI-3ML" secondAttribute="bottom" constant="17" id="ZPI-p7-wPT"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Sqp-6I-DU2" secondAttribute="bottom" constant="30" id="ZhK-Ek-YTg"/>
-                            <constraint firstItem="Sqp-6I-DU2" firstAttribute="leading" secondItem="jUQ-PG-8fy" secondAttribute="trailing" constant="18" id="iNI-JK-72g"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cEE-pI-3ML" secondAttribute="trailing" constant="60" id="sdx-iE-TN7"/>
-                            <constraint firstItem="cEE-pI-3ML" firstAttribute="leading" secondItem="jUQ-PG-8fy" secondAttribute="trailing" constant="18" id="sxa-2T-68g"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Mro-SZ-GyC" secondAttribute="trailing" constant="44" id="ufy-q6-8W4"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aYD-xH-7qf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3338.1679389312976" y="-349.29577464788736"/>
-        </scene>
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
