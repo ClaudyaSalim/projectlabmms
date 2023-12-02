@@ -14,9 +14,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func a (){
-        return
-    }
+    
+    @IBAction func onRegisClick(_ sender: Any) {
+        if let nextView = storyboard?.instantiateViewController(withIdentifier: "RegisterPage") {
+                let regisPageView = nextView as! RegisViewController
 
+                navigationController?.setViewControllers([regisPageView], animated: true)
+        }
+    }
+    
 }
 
