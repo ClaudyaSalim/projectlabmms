@@ -9,6 +9,11 @@ import UIKit
 
 class RegisViewController: UIViewController {
 
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passField: UITextField!
+    @IBOutlet weak var confirmPassField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +21,21 @@ class RegisViewController: UIViewController {
     }
     
     @IBAction func onRegisClick(_ sender: Any) {
+        
+        // ambil dari text field
+        let name = nameField.text
+        let email = emailField.text
+        let pass = passField.text
+        let confirmPass = confirmPassField.text
+        
+        // validasi
+        if(name=="" || email=="" || pass=="" || confirmPass==""){
+            showAlert(msg: "All fields must be filled")
+        }
+        else if(!(pass==confirmPass)){
+            showAlert(msg: "Password and Confirm Password should be the same")
+        }
+        
         if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
                 let mainPageView = nextView as! TabViewController
             
@@ -35,5 +55,19 @@ class RegisViewController: UIViewController {
     }
     
     
+    func showAlert(msg:String){
+        
+        // define alert
+        let alert = UIAlertController(title: "Login Failed", message: msg, preferredStyle: .alert)
+        
+        // define action
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        
+        // add action to alert
+        alert.addAction(okAction)
+        
+        // show alert
+        present(alert, animated: true)
+    }
 
 }
