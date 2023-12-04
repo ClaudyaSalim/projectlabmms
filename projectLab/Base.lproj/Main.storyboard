@@ -395,7 +395,7 @@
                             <constraint firstItem="hPu-nm-ZYQ" firstAttribute="bottom" secondItem="NC7-rl-Bjj" secondAttribute="bottom" constant="25" id="vSi-Gg-SXu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="RB1-hR-7YS"/>
+                    <tabBarItem key="tabBarItem" title="Transaction" image="cart.fill" catalog="system" id="RB1-hR-7YS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lv-9p-9hp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -561,8 +561,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="2SX-BL-4Ly" kind="relationship" relationship="viewControllers" id="mhN-el-xZI"/>
-                        <segue destination="hXq-Iz-h3Q" kind="relationship" relationship="viewControllers" id="dqe-5F-bOw"/>
-                        <segue destination="giX-Fj-JuA" kind="relationship" relationship="viewControllers" id="GAn-C8-hMs"/>
+                        <segue destination="hXq-Iz-h3Q" kind="relationship" relationship="viewControllers" id="Wte-7x-PSo"/>
+                        <segue destination="giX-Fj-JuA" kind="relationship" relationship="viewControllers" id="jeC-F0-U4B"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTe-Sh-uw5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -571,6 +571,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="logo_gameHI" width="500" height="500"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
