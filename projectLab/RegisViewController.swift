@@ -32,9 +32,20 @@ class RegisViewController: UIViewController {
         if(name=="" || email=="" || pass=="" || confirmPass==""){
             showAlert(msg: "All fields must be filled")
         }
+        
+        else if (name!.count < 3 ){
+            showAlert(msg: "Name Should be more than 3 characters")
+        }
+        
         else if(!(pass==confirmPass)){
             showAlert(msg: "Password and Confirm Password should be the same")
         }
+        
+        else if (!(email!.hasSuffix(".com")) || (!(email!.contains("@")))){
+            showAlert(msg: "Email should contain '@' and ends with .com")
+        }
+        
+       
         
         
         
