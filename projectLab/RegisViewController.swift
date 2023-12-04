@@ -57,13 +57,13 @@ class RegisViewController: UIViewController {
         createData(person:newPerson!)
         
         
-//        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
-//                let mainPageView = nextView as! TabViewController
-//
-//                // passing data
-//
-//                navigationController?.setViewControllers([mainPageView], animated: true)
-//        }
+        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
+                let mainPageView = nextView as! TabViewController
+
+                // passing data
+
+                navigationController?.setViewControllers([mainPageView], animated: true)
+        }
     }
     
 
