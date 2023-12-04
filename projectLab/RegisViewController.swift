@@ -42,8 +42,9 @@ class RegisViewController: UIViewController {
             return
         }
         
-        else if (name!.count < 3 ){
+        else if (name.count < 3 ){
             showAlert(msg: "Name Should be more than 3 characters")
+            return
         }
         
         else if(!(pass==confirmPass)){
@@ -51,33 +52,17 @@ class RegisViewController: UIViewController {
             return
         }
         
+        else if (!(email.hasSuffix(".com")) || (!(email.contains("@")))){
+            showAlert(msg: "Email should contain '@' and ends with .com")
+            return
+        }
+        
         print(name, email, pass)
         
         newPerson = Person(name: name, email: email, pass: pass)
-        // tambahin ke core data
-//        newPerson!.name = name
-//        newPerson!.email = email
-//        newPerson!.pass = pass
         
         createData(person:newPerson!)
-        
-        
-//        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
-//                let mainPageView = nextView as! TabViewController
-//
-//                // passing data
-//
-//                navigationController?.setViewControllers([mainPageView], animated: true)
-//        }
-        }
-        
-        else if (!(email!.hasSuffix(".com")) || (!(email!.contains("@")))){
-            showAlert(msg: "Email should contain '@' and ends with .com")
-        }
-        
-       
-        
-        
+     
         
         if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
                 let mainPageView = nextView as! TabViewController
@@ -134,7 +119,6 @@ class RegisViewController: UIViewController {
                 print(i)
             }
             
-//            contactsTableView.reloadData()
         } catch {
             print("Data loading failure")
         }
