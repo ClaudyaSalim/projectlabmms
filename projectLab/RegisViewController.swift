@@ -36,6 +36,8 @@ class RegisViewController: UIViewController {
             showAlert(msg: "Password and Confirm Password should be the same")
         }
         
+        
+        
         if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
                 let mainPageView = nextView as! TabViewController
             
@@ -55,6 +57,8 @@ class RegisViewController: UIViewController {
     }
     
     
+    
+    
     func showAlert(msg:String){
         
         // define alert
@@ -68,6 +72,12 @@ class RegisViewController: UIViewController {
         
         // show alert
         present(alert, animated: true)
+    }
+    
+    
+    //Keyboard Off
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }

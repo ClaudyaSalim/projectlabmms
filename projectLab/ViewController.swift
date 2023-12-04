@@ -8,7 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailFieldLogin: UITextField!
+    
+    @IBOutlet weak var passFieldLogin: UITextField!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +39,11 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    //Keyboard Off
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
 }
 
