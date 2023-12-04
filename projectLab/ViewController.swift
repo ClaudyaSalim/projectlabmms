@@ -15,13 +15,16 @@ class ViewController: UIViewController {
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func onLoginClick(_ sender: Any) {
+        
+        let emailTxtRegist = emailFieldLogin.text
+        let passTxtRegist = passFieldLogin.text
+        
         if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
                 let mainPageView = nextView as! TabViewController
             

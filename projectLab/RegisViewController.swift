@@ -41,6 +41,11 @@ class RegisViewController: UIViewController {
             showAlert(msg: "All fields must be filled")
             return
         }
+        
+        else if (name!.count < 3 ){
+            showAlert(msg: "Name Should be more than 3 characters")
+        }
+        
         else if(!(pass==confirmPass)){
             showAlert(msg: "Password and Confirm Password should be the same")
             return
@@ -57,9 +62,26 @@ class RegisViewController: UIViewController {
         createData(person:newPerson!)
         
         
+//        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
+//                let mainPageView = nextView as! TabViewController
+//
+//                // passing data
+//
+//                navigationController?.setViewControllers([mainPageView], animated: true)
+//        }
+        }
+        
+        else if (!(email!.hasSuffix(".com")) || (!(email!.contains("@")))){
+            showAlert(msg: "Email should contain '@' and ends with .com")
+        }
+        
+       
+        
+        
+        
         if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
                 let mainPageView = nextView as! TabViewController
-
+            
                 // passing data
 
                 navigationController?.setViewControllers([mainPageView], animated: true)
