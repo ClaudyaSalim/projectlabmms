@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RegisViewController: UIViewController {
 
@@ -14,37 +15,55 @@ class RegisViewController: UIViewController {
     @IBOutlet weak var passField: UITextField!
     @IBOutlet weak var confirmPassField: UITextField!
     
+    var userArr = [Person]()
+    var contxt: NSManagedObjectContext!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // setup core data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        contxt = appDelegate.persistentContainer.viewContext
     }
     
     @IBAction func onRegisClick(_ sender: Any) {
         
+        var newPerson: Person?
+        
         // ambil dari text field
-        let name = nameField.text
-        let email = emailField.text
-        let pass = passField.text
-        let confirmPass = confirmPassField.text
+        let name = nameField.text!
+        let email = emailField.text!
+        let pass = passField.text!
+        let confirmPass = confirmPassField.text!
         
         // validasi
         if(name=="" || email=="" || pass=="" || confirmPass==""){
             showAlert(msg: "All fields must be filled")
+            return
         }
         else if(!(pass==confirmPass)){
             showAlert(msg: "Password and Confirm Password should be the same")
+            return
         }
         
+        print(name, email, pass)
+        
+        newPerson = Person(name: name, email: email, pass: pass)
+        // tambahin ke core data
+//        newPerson!.name = name
+//        newPerson!.email = email
+//        newPerson!.pass = pass
+        
+        createData(person:newPerson!)
         
         
-        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
-                let mainPageView = nextView as! TabViewController
-            
-                // passing data
-
-                navigationController?.setViewControllers([mainPageView], animated: true)
-        }
+//        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
+//                let mainPageView = nextView as! TabViewController
+//
+//                // passing data
+//
+//                navigationController?.setViewControllers([mainPageView], animated: true)
+//        }
     }
     
 
@@ -57,6 +76,47 @@ class RegisViewController: UIViewController {
     }
     
     
+    func createData(person:Person) {
+        
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: contxt)
+        
+        let newPerson = NSManagedObject(entity: entity!, insertInto: contxt)
+        newPerson.setValue(person.name, forKey: "name")
+        newPerson.setValue(person.email, forKey: "email")
+        newPerson.setValue(person.pass, forKey: "password")
+        
+        do {
+            try contxt.save()
+            loadData()
+        } catch {
+            print("Entity creation failed")
+        }
+        
+    }
+    
+    
+    func loadData() {
+        userArr.removeAll()
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                userArr.append(
+                    Person(name: data.value(forKey: "name") as! String, email: data.value(forKey: "email") as! String, pass: data.value(forKey: "password") as! String))
+            }
+            
+            for i in userArr {
+                print(i)
+            }
+            
+//            contactsTableView.reloadData()
+        } catch {
+            print("Data loading failure")
+        }
+    }
     
     
     func showAlert(msg:String){
