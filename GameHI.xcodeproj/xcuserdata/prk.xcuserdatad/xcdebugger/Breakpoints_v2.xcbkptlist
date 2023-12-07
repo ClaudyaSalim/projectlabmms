@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "31032C0D-CAE1-4E4D-BBF2-092A1AC1CCDE"
+            uuid = "53AA8FCD-8300-4ADD-A609-B04079AB9E16"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "projectLab/RegisViewController.swift"
+            filePath = "projectLab/DatabaseFunctions.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "onRegisClick(_:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getUser(contxt:email:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6BA495A6-9C12-4DD7-90F9-CB93ECA450A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "projectLab/DatabaseFunctions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "getUser(contxt:email:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

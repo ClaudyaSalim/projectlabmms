@@ -6,17 +6,23 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var emailFieldLogin: UITextField!
-    
     @IBOutlet weak var passFieldLogin: UITextField!
     
-    
+    var contxt: NSManagedObjectContext!
+    var db=Database()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setup core data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        contxt = appDelegate.persistentContainer.viewContext
+        
         // Do any additional setup after loading the view.
     }
     
@@ -25,10 +31,31 @@ class ViewController: UIViewController {
         let emailTxtRegist = emailFieldLogin.text
         let passTxtRegist = passFieldLogin.text
         
+        print("login pressed!")
+        
+        // validasi
+        if(emailTxtRegist=="" || passTxtRegist==""){
+            showAlert(msg: "All fields must be filled")
+            return
+        }
+        
+        var checkPerson:Person?
+        checkPerson = db.getUser(contxt: contxt, email: emailTxtRegist!)
+        
+        if (checkPerson!.email == nil){
+            showAlert(msg: "Email is invalid")
+            return
+        }
+        else if (checkPerson!.pass != passTxtRegist){
+            showAlert(msg: "Password is invalid")
+            return
+        }
+        
         if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
                 let mainPageView = nextView as! TabViewController
             
-                // passing data
+                // set user
+                UserDefaults.standard.set(checkPerson!.email, forKey: "userEmail")
 
                 navigationController?.setViewControllers([mainPageView], animated: true)
         }
@@ -40,6 +67,22 @@ class ViewController: UIViewController {
 
                 navigationController?.setViewControllers([regisPageView], animated: true)
         }
+    }
+    
+    
+    func showAlert(msg:String){
+        
+        // define alert
+        let alert = UIAlertController(title: "Login Failed", message: msg, preferredStyle: .alert)
+        
+        // define action
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        
+        // add action to alert
+        alert.addAction(okAction)
+        
+        // show alert
+        present(alert, animated: true)
     }
     
     

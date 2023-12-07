@@ -15,8 +15,8 @@ class RegisViewController: UIViewController {
     @IBOutlet weak var passField: UITextField!
     @IBOutlet weak var confirmPassField: UITextField!
     
-    var userArr = [Person]()
     var contxt: NSManagedObjectContext!
+    var db=Database()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,18 +59,25 @@ class RegisViewController: UIViewController {
         
         print(name, email, pass)
         
+        newPerson = db.getUser(contxt: contxt, email: email)
+        if(newPerson!.email != nil){
+            showAlert(msg: "Email has been registered!\nHead to sign in")
+        }
+        
         newPerson = Person(name: name, email: email, pass: pass)
         
-        createData(person:newPerson!)
+        db.insertUser(contxt:contxt, person:newPerson!)
      
         
         if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
-                let mainPageView = nextView as! TabViewController
+            let mainPageView = nextView as! TabViewController
             
-                // passing data
+            // set user
+            UserDefaults.standard.set(newPerson!.email, forKey: "userEmail")
 
-                navigationController?.setViewControllers([mainPageView], animated: true)
+            navigationController?.setViewControllers([mainPageView], animated: true)
         }
+        
     }
     
 
@@ -79,48 +86,6 @@ class RegisViewController: UIViewController {
                 let loginPageView = nextView as! ViewController
 
                 navigationController?.setViewControllers([loginPageView], animated: true)
-        }
-    }
-    
-    
-    func createData(person:Person) {
-        
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: contxt)
-        
-        let newPerson = NSManagedObject(entity: entity!, insertInto: contxt)
-        newPerson.setValue(person.name, forKey: "name")
-        newPerson.setValue(person.email, forKey: "email")
-        newPerson.setValue(person.pass, forKey: "password")
-        
-        do {
-            try contxt.save()
-            loadData()
-        } catch {
-            print("Entity creation failed")
-        }
-        
-    }
-    
-    
-    func loadData() {
-        userArr.removeAll()
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        
-        do {
-            let result = try contxt.fetch(request) as! [NSManagedObject]
-            
-            for data in result {
-                userArr.append(
-                    Person(name: data.value(forKey: "name") as! String, email: data.value(forKey: "email") as! String, pass: data.value(forKey: "password") as! String))
-            }
-            
-            for i in userArr {
-                print(i)
-            }
-            
-        } catch {
-            print("Data loading failure")
         }
     }
     
