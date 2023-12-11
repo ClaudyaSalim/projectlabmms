@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0503B10B2B1D96910073D1A0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503B10A2B1D96910073D1A0 /* Model.swift */; };
-		055EE6ED2B26EF7600947151 /* UpdateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EE6EC2B26EF7600947151 /* UpdateItemViewController.swift */; };
+		055EE6EF2B26F25500947151 /* UpdateItemAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EE6EE2B26F25500947151 /* UpdateItemAdminViewController.swift */; };
 		056798EF2B21908500A515A4 /* DatabaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056798EE2B21908500A515A4 /* DatabaseFunctions.swift */; };
 		056798F12B21927300A515A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056798F02B21927200A515A4 /* HomeViewController.swift */; };
 		05A5B2842B1B2A77000C6FF3 /* RegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5B2832B1B2A77000C6FF3 /* RegisViewController.swift */; };
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		0503B10A2B1D96910073D1A0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		055EE6EC2B26EF7600947151 /* UpdateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemViewController.swift; sourceTree = "<group>"; };
+		055EE6EE2B26F25500947151 /* UpdateItemAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemAdminViewController.swift; sourceTree = "<group>"; };
 		056798EE2B21908500A515A4 /* DatabaseFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseFunctions.swift; sourceTree = "<group>"; };
 		056798F02B21927200A515A4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05A5B2832B1B2A77000C6FF3 /* RegisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		05C81D682B26E05200144007 /* adminPage */ = {
 			isa = PBXGroup;
 			children = (
-				055EE6EC2B26EF7600947151 /* UpdateItemViewController.swift */,
+				055EE6EE2B26F25500947151 /* UpdateItemAdminViewController.swift */,
 			);
 			path = adminPage;
 			sourceTree = "<group>";
@@ -167,11 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055EE6EF2B26F25500947151 /* UpdateItemAdminViewController.swift in Sources */,
 				056798EF2B21908500A515A4 /* DatabaseFunctions.swift in Sources */,
 				0503B10B2B1D96910073D1A0 /* Model.swift in Sources */,
 				05A5B2AE2B1B3759000C6FF3 /* TabViewController.swift in Sources */,
 				05A5B2872B1B2DA9000C6FF3 /* projectLab.xcdatamodeld in Sources */,
-				055EE6ED2B26EF7600947151 /* UpdateItemViewController.swift in Sources */,
 				05F5DAF82B08A5720028DB4B /* ViewController.swift in Sources */,
 				056798F12B21927300A515A4 /* HomeViewController.swift in Sources */,
 				05A5B2842B1B2A77000C6FF3 /* RegisViewController.swift in Sources */,
