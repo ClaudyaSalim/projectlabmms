@@ -188,7 +188,6 @@
                                 <rect key="frame" x="16" y="490" width="361" height="215"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="215" id="0v4-mM-MVu"/>
-                                    <constraint firstAttribute="width" constant="360" id="65r-R8-4Gh"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEW-Ij-QBM">
@@ -261,7 +260,7 @@
             <objects>
                 <viewController id="y7H-iw-oZt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JYg-Gf-HHN">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfJ-p2-gK2">
@@ -282,6 +281,7 @@
                         <viewLayoutGuide key="safeArea" id="Wtp-6r-Qb8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="F4C-Iw-hRP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gvg-6y-mtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -853,6 +853,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Item"/>
+                                <connections>
+                                    <segue destination="y7H-iw-oZt" kind="show" id="YZ5-pG-IKC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R8M-mU-kTw"/>
