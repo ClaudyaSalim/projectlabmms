@@ -70,13 +70,25 @@ class RegisViewController: UIViewController {
         db.insertUser(contxt:contxt, person:newPerson!)
      
         
-        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
-            let mainPageView = nextView as! TabViewController
-            
-            // set user
-            UserDefaults.standard.set(newPerson!.email, forKey: "userEmail")
+        if (email.hasSuffix("@admin.com")){
+            if let nextView = storyboard?.instantiateViewController(withIdentifier: "homeAdmin") {
+                    let adminHomeView = nextView as! AdminHomeViewController
+                
+                    // set user
+                    UserDefaults.standard.set(email, forKey: "userEmail")
 
-            navigationController?.setViewControllers([mainPageView], animated: true)
+                    navigationController?.setViewControllers([adminHomeView], animated: true)
+            }
+        }
+        else {
+            if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
+                    let mainPageView = nextView as! TabViewController
+                
+                    // set user
+                    UserDefaults.standard.set(email, forKey: "userEmail")
+
+                    navigationController?.setViewControllers([mainPageView], animated: true)
+            }
         }
         
     }
