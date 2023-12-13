@@ -51,17 +51,27 @@ class ViewController: UIViewController {
             return
         }
         
-        
-        
-        
-        if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
-                let mainPageView = nextView as! TabViewController
-            
-                // set user
-                UserDefaults.standard.set(checkPerson!.email, forKey: "userEmail")
+        if (checkPerson!.email!.hasSuffix("@admin.com")){
+            if let nextView = storyboard?.instantiateViewController(withIdentifier: "homeAdmin") {
+                    let adminHomeView = nextView as! AdminHomeViewController
+                
+                    // set user
+                    UserDefaults.standard.set(checkPerson!.email, forKey: "userEmail")
 
-                navigationController?.setViewControllers([mainPageView], animated: true)
+                    navigationController?.setViewControllers([adminHomeView], animated: true)
+            }
         }
+        else {
+            if let nextView = storyboard?.instantiateViewController(withIdentifier: "MainPage") {
+                    let mainPageView = nextView as! TabViewController
+                
+                    // set user
+                    UserDefaults.standard.set(checkPerson!.email, forKey: "userEmail")
+
+                    navigationController?.setViewControllers([mainPageView], animated: true)
+            }
+        }
+
     }
     
     @IBAction func onRegisClick(_ sender: Any) {
