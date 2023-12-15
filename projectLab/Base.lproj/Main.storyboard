@@ -255,10 +255,10 @@
             </objects>
             <point key="canvasLocation" x="768.70229007633588" y="-847.18309859154931"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item Admin View Controller-->
         <scene sceneID="0Eq-Vw-Hn2">
             <objects>
-                <viewController id="y7H-iw-oZt" sceneMemberID="viewController">
+                <viewController id="y7H-iw-oZt" customClass="AddItemAdminViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JYg-Gf-HHN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,6 +324,9 @@
                                 <color key="tintColor" red="0.98531919720000005" green="0.68380373719999998" blue="0.2068267167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
+                                <connections>
+                                    <action selector="onConfirmClicked:" destination="y7H-iw-oZt" eventType="touchUpInside" id="fxn-7F-on8"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXd-bq-FB7">
                                 <rect key="frame" x="16" y="489.00000000000006" width="361" height="174.66666666666669"/>
@@ -382,6 +385,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F4C-Iw-hRP"/>
+                    <connections>
+                        <outlet property="categoryField" destination="aT4-22-iuS" id="6JR-fD-Wkj"/>
+                        <outlet property="descField" destination="Eph-on-4EC" id="Arq-BA-pQl"/>
+                        <outlet property="nameField" destination="cEc-X5-gNb" id="6HH-G0-aq2"/>
+                        <outlet property="priceField" destination="fYV-bw-edC" id="4oc-UA-Dxy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gvg-6y-mtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

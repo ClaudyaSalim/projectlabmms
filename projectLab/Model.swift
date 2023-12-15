@@ -13,3 +13,11 @@ struct Person {
     var email: String?
     var pass: String?
 }
+
+struct Item {
+    var name: String?
+    var category: String?
+    var price: Int?
+    var desc:String?
+//    var img:String?
+}

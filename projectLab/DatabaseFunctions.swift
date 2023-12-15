@@ -74,4 +74,46 @@ class Database {
         return person ?? Person(name: nil, email: nil, pass: nil)
     }
     
+    
+    func insertProduct(contxt:NSManagedObjectContext, product:Item) {
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Product", in: contxt)
+        
+        let newProduct = NSManagedObject(entity: entity!, insertInto: contxt)
+        newProduct.setValue(product.name, forKey: "name")
+        newProduct.setValue(product.category, forKey: "category")
+        newProduct.setValue(product.price, forKey: "price")
+        newProduct.setValue(product.desc, forKey: "desc")
+        
+        do {
+            try contxt.save()
+            getProducts(contxt:contxt)
+        } catch {
+            print("Entity creation failed")
+        }
+    }
+    
+    
+    func getProducts(contxt:NSManagedObjectContext) {
+        var itemArr = [Item]()
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                itemArr.append(
+                    Item(name: data.value(forKey: "name") as! String, category: data.value(forKey: "category") as! String, price: data.value(forKey: "price") as! Int, desc: data.value(forKey: "desc") as! String))
+            }
+            
+            for i in itemArr {
+                print(i)
+            }
+            
+        } catch {
+            print("Data loading failure")
+        }
+    }
+    
 }
