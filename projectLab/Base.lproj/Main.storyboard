@@ -253,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWS-og-LCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768.70229007633588" y="-847.18309859154931"/>
+            <point key="canvasLocation" x="1682" y="-847"/>
         </scene>
         <!--Add Item Admin View Controller-->
         <scene sceneID="0Eq-Vw-Hn2">
@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gvg-6y-mtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1682" y="-847"/>
+            <point key="canvasLocation" x="769" y="-847"/>
         </scene>
         <!--Regis View Controller-->
         <scene sceneID="yfW-hx-iBm">
@@ -700,7 +700,7 @@
                                 <rect key="frame" x="16" y="111" width="361" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="180" id="Ycm-7O-heg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="180" id="Ycm-7O-heg" customClass="ProductTableViewCell" customModule="projectLab" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="361" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ycm-7O-heg" id="ySg-wm-0nW">
@@ -747,6 +747,12 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="7Zj-0e-Stu" secondAttribute="trailing" constant="18" id="z0M-Je-Ay3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productCategory" destination="k6O-V0-0ie" id="VHT-s5-zDX"/>
+                                            <outlet property="productImage" destination="sLu-3o-xLY" id="uoL-fp-Tfn"/>
+                                            <outlet property="productName" destination="7Zj-0e-Stu" id="wVC-lt-GI4"/>
+                                            <outlet property="productPrice" destination="AYY-R6-j1S" id="dFR-CI-sxu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -766,6 +772,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="RZb-SN-wdL"/>
                     <connections>
                         <outlet property="greetingLabel" destination="vH7-29-DLc" id="AX3-ki-F8i"/>
+                        <outlet property="productTable" destination="9Ym-F1-44D" id="geC-re-l6b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7a-oW-8Eu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -864,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOY-vT-P1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3496.9465648854962" y="-360.56338028169017"/>
+            <point key="canvasLocation" x="3459" y="-282"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="G5d-US-y0q">

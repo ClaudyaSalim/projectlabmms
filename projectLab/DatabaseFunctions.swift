@@ -77,6 +77,8 @@ class Database {
     
     func insertProduct(contxt:NSManagedObjectContext, product:Item) {
         
+        var itemArr = [Item]()
+        
         let entity = NSEntityDescription.entity(forEntityName: "Product", in: contxt)
         
         let newProduct = NSManagedObject(entity: entity!, insertInto: contxt)
@@ -87,14 +89,14 @@ class Database {
         
         do {
             try contxt.save()
-            getProducts(contxt:contxt)
+            itemArr = getProducts(contxt:contxt)
         } catch {
             print("Entity creation failed")
         }
     }
     
     
-    func getProducts(contxt:NSManagedObjectContext) {
+    func getProducts(contxt:NSManagedObjectContext) -> [Item] {
         var itemArr = [Item]()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
@@ -114,6 +116,32 @@ class Database {
         } catch {
             print("Data loading failure")
         }
+        
+        return itemArr
     }
     
+    
+    func getProduct(contxt:NSManagedObjectContext, name:String) -> Item{
+        var product:Item?
+        
+        // check all user
+        getProducts(contxt: contxt)
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        
+        request.predicate = NSPredicate(format: "name=%@", name)
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                product = Item(name: data.value(forKey: "name") as! String, category: data.value(forKey: "category") as! String, price: data.value(forKey: "price") as! Int, desc: data.value(forKey: "desc") as! String)
+            }
+            
+        } catch {
+            print("Data loading failure")
+        }
+        
+        return product ?? Item(name: nil, category: nil, price: nil, desc: nil)
+    }
 }
