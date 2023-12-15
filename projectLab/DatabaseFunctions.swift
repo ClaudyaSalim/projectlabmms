@@ -136,7 +136,7 @@ class Database {
             let result = try contxt.fetch(request) as! [NSManagedObject]
             
             for data in result {
-                product = Item(name: data.value(forKey: "name") as! String, category: data.value(forKey: "category") as! String, price: data.value(forKey: "price") as! Int, desc: data.value(forKey: "desc") as! String)
+                product = Item(name: data.value(forKey: "name") as! String, category: data.value(forKey: "category") as! String, price: data.value(forKey: "price") as! Int, desc: data.value(forKey: "desc") as! String, img: data.value(forKey: "image") as! String)
             }
             
         } catch {
