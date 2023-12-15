@@ -86,7 +86,8 @@ class Database {
         newProduct.setValue(product.category, forKey: "category")
         newProduct.setValue(product.price, forKey: "price")
         newProduct.setValue(product.desc, forKey: "desc")
-        
+        newProduct.setValue(product.img, forKey: "image")
+        print(product.img! + "Database")
         do {
             try contxt.save()
             itemArr = getProducts(contxt:contxt)
@@ -106,7 +107,7 @@ class Database {
             
             for data in result {
                 itemArr.append(
-                    Item(name: data.value(forKey: "name") as! String, category: data.value(forKey: "category") as! String, price: data.value(forKey: "price") as! Int, desc: data.value(forKey: "desc") as! String))
+                    Item(name: data.value(forKey: "name") as! String, category: data.value(forKey: "category") as! String, price: data.value(forKey: "price") as! Int, desc: data.value(forKey: "desc") as! String, img: data.value(forKey: "image") as! String))
             }
             
             for i in itemArr {
