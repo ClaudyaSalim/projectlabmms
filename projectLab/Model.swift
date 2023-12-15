@@ -19,5 +19,5 @@ struct Item {
     var category: String?
     var price: Int?
     var desc:String?
-//    var img:String?
+    var img:String?
 }
