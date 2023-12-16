@@ -754,7 +754,7 @@
                                             <outlet property="productImage" destination="sLu-3o-xLY" id="uoL-fp-Tfn"/>
                                             <outlet property="productName" destination="7Zj-0e-Stu" id="wVC-lt-GI4"/>
                                             <outlet property="productPrice" destination="AYY-R6-j1S" id="dFR-CI-sxu"/>
-                                            <segue destination="Ts2-oh-PEL" kind="show" id="6Pk-Lu-V9x"/>
+                                            <segue destination="Ts2-oh-PEL" kind="show" identifier="toDetail" id="6Pk-Lu-V9x"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -785,7 +785,7 @@
         <!--Detail Transaction-->
         <scene sceneID="K7L-6c-2Jb">
             <objects>
-                <viewController title="Detail Transaction" id="Ts2-oh-PEL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailPage" title="Detail Transaction" id="Ts2-oh-PEL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FvY-Hf-Q1W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

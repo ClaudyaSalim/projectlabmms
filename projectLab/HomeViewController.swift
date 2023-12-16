@@ -55,5 +55,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        var item = productList[indexPath.row]
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailPage" {
+            if let detailController = segue.destination as? DetailViewController {
+                detailController.item = nil
+            }
+        }
+    }
 
 }
