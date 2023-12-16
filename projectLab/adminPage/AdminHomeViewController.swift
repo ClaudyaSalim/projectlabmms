@@ -29,7 +29,14 @@ class AdminHomeViewController: UIViewController {
         greetingLabel.text = "Hello, Admin \(activeUser!.name!)!"
     }
     
-
+    
+    @IBAction func onClickLogout(_ sender: Any) {
+        if let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginPage") {
+            let loginView = loginVC as! ViewController
+            navigationController?.setViewControllers([loginView], animated: true)
+               }
+    }
+    
     /*
     // MARK: - Navigation
 

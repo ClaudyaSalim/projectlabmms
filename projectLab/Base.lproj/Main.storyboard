@@ -920,7 +920,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8so-BE-QKw">
-                                <rect key="frame" x="16" y="111" width="361" height="707"/>
+                                <rect key="frame" x="16" y="111" width="361" height="652"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="180" id="FWs-bF-04z">
@@ -985,30 +985,40 @@
                                     <segue destination="y7H-iw-oZt" kind="show" id="YZ5-pG-IKC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaK-L9-Gvh">
+                                <rect key="frame" x="139" y="783" width="115" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.right.fill" catalog="system" title="Log Out"/>
+                                <connections>
+                                    <action selector="onClickLogout:" destination="pfQ-Ha-vmq" eventType="touchUpInside" id="Aqj-bR-Dil"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R8M-mU-kTw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EaK-L9-Gvh" firstAttribute="leading" secondItem="R8M-mU-kTw" secondAttribute="leading" constant="139" id="9ii-LB-fqk"/>
                             <constraint firstItem="8so-BE-QKw" firstAttribute="top" secondItem="IcK-yJ-NqM" secondAttribute="bottom" constant="8" id="PW3-3p-Dd8"/>
                             <constraint firstItem="IcK-yJ-NqM" firstAttribute="leading" secondItem="R8M-mU-kTw" secondAttribute="leading" constant="25" id="QPL-zt-FiZ"/>
-                            <constraint firstItem="R8M-mU-kTw" firstAttribute="bottom" secondItem="8so-BE-QKw" secondAttribute="bottom" id="d9S-Gi-2hw"/>
                             <constraint firstItem="R8M-mU-kTw" firstAttribute="trailing" secondItem="dG2-Id-u86" secondAttribute="trailing" constant="25" id="dgs-4v-FDA"/>
+                            <constraint firstItem="EaK-L9-Gvh" firstAttribute="bottom" secondItem="R8M-mU-kTw" secondAttribute="bottom" id="gXM-z5-e1q"/>
                             <constraint firstItem="8so-BE-QKw" firstAttribute="leading" secondItem="R8M-mU-kTw" secondAttribute="leading" constant="16" id="nh0-Ha-1mU"/>
                             <constraint firstItem="dG2-Id-u86" firstAttribute="leading" secondItem="IcK-yJ-NqM" secondAttribute="trailing" constant="10" id="nxZ-oP-HVh"/>
                             <constraint firstItem="IcK-yJ-NqM" firstAttribute="top" secondItem="R8M-mU-kTw" secondAttribute="top" constant="18" id="rWe-CA-fXP"/>
                             <constraint firstItem="dG2-Id-u86" firstAttribute="centerY" secondItem="IcK-yJ-NqM" secondAttribute="centerY" id="u68-hF-hA1"/>
+                            <constraint firstItem="R8M-mU-kTw" firstAttribute="trailing" secondItem="EaK-L9-Gvh" secondAttribute="trailing" constant="139" id="vk2-AQ-4iO"/>
+                            <constraint firstItem="EaK-L9-Gvh" firstAttribute="top" secondItem="8so-BE-QKw" secondAttribute="bottom" constant="20" id="yab-Hw-NgV"/>
                             <constraint firstItem="R8M-mU-kTw" firstAttribute="trailing" secondItem="8so-BE-QKw" secondAttribute="trailing" constant="16" id="zfo-Ax-Pbk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="lZf-Vb-cQi"/>
                     <connections>
                         <outlet property="greetingLabel" destination="IcK-yJ-NqM" id="8Mg-Z1-IXR"/>
-                        <outlet property="productTable" destination="8so-BE-QKw" id="aop-0W-KOw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMI-VA-1WA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="-847"/>
+            <point key="canvasLocation" x="-100" y="-847.18309859154931"/>
         </scene>
     </scenes>
     <resources>
