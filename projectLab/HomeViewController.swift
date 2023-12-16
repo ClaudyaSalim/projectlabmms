@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var contxt: NSManagedObjectContext!
     
     var productList = [Item]()
+    var item:Item?
     @IBOutlet weak var productTable: UITableView!
     
     override func viewDidLoad() {
@@ -68,15 +69,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var item = productList[indexPath.row]
-//    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailPage" {
-            if let detailController = segue.destination as? DetailViewController {
-                detailController.item = nil
-            }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        item = productList[indexPath.row]
+        
+        if let nextview = storyboard?.instantiateViewController(withIdentifier: "DetailPage") {
+                let detailView = nextview as! DetailViewController
+
+                // hanya dipakai saat passing data
+            detailView.item = item // atau tipe data dari variabelnya
+
+            navigationController?.pushViewController(detailView, animated: true)
         }
     }
 

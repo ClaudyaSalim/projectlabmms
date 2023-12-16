@@ -10,22 +10,21 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var item:Item?
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if(item != nil){
+            nameLabel.text = item!.name!
+            categoryLabel.text = item!.category!
+            priceLabel.text = "Rp\(item!.price!)"
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
