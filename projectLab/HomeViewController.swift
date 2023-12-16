@@ -51,6 +51,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.productName.text = productList[indexPath.row].name
         cell.productCategory.text = productList[indexPath.row].category
         cell.productPrice.text = "Rp\(productList[indexPath.row].price!)"
+        
+        //
+        let imagePath = productList[indexPath.row].img
+        
+        if let imagePath = imagePath{
+            cell.productImage.image = UIImage(contentsOfFile: imagePath)
+        }else{
+            cell.productImage.image = UIImage(named: "defaultImage")
+        }
+        
+        
+        
 //        print(productList[indexPath.row])
                 
         return cell
