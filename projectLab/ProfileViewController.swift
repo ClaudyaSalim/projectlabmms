@@ -1,42 +1,58 @@
 //
-//  AdminHomeViewController.swift
+//  ProfileViewController.swift
 //  projectLab
 //
-//  Created by prk on 13/12/23.
+//  Created by prk on 15/12/23.
 //
 
 import UIKit
 import CoreData
 
-class AdminHomeViewController: UIViewController {
 
-    @IBOutlet weak var greetingLabel: UILabel!
+class ProfileViewController: UIViewController {
+    
+    
+    @IBOutlet weak var usernameProfile: UILabel!
+    
+    @IBOutlet weak var emailProfile: UILabel!
+    
+    @IBOutlet weak var passwordProfile: UILabel!
+    
     var activeUser:Person?
     var db = Database()
     var contxt: NSManagedObjectContext!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // setup core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         contxt = appDelegate.persistentContainer.viewContext
-
-        // Do any additional setup after loading the view.
+        
         let email = UserDefaults.standard.string(forKey: "userEmail")
         activeUser = db.getUser(contxt: contxt, email: email!)
         print(activeUser!.name)
-        greetingLabel.text = "Hello, Admin \(activeUser!.name!)!"
+        loadUserData()
+
     }
     
+    func loadUserData(){
+            usernameProfile.text = activeUser!.name!
+            emailProfile.text = activeUser!.email!
+            passwordProfile.text = activeUser!.pass!
+            
+        }
     
-    @IBAction func onClickLogout(_ sender: Any) {
+    @IBAction func onClikLogout(_ sender: Any) {
+        
+        UserDefaults.standard.removeObject(forKey: "userEmail")
+        
         if let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginPage") {
             let loginView = loginVC as! ViewController
             navigationController?.setViewControllers([loginView], animated: true)
                }
     }
     
+
     /*
     // MARK: - Navigation
 
