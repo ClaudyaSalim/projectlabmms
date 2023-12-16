@@ -61,21 +61,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                // Mengatur gambar default jika imagePath tidak ada atau file gambar tidak dapat dibaca
                cell.productImage.image = UIImage(named: "defaultImage")
            }
-        
-        
-        
-//        print(productList[indexPath.row])
                 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         item = productList[indexPath.row]
         
         if let nextview = storyboard?.instantiateViewController(withIdentifier: "DetailPage") {
-                let detailView = nextview as! DetailViewController
+            let detailView = nextview as! DetailViewController
 
-                // hanya dipakai saat passing data
             detailView.item = item // atau tipe data dari variabelnya
 
             navigationController?.pushViewController(detailView, animated: true)
