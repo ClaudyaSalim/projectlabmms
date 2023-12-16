@@ -18,6 +18,7 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
     
     //
     var imagePath : String!
+    var imageIteration: Int = 1
     
     @IBAction func addImgclick(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -33,10 +34,7 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         imageView.image = image
         
         //
-        saveImageToDocumentDirectory(image: image, fileName: "yourFileName.jpg")
-        
-        
-        
+        saveImageToDocumentDirectory(image: image, fileName: "yourFileName_\(imageIteration).jpg")
         dismiss(animated: true)
     }
     
@@ -49,6 +47,9 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         // setup core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         contxt = appDelegate.persistentContainer.viewContext
+        if let savedIteration = UserDefaults.standard.value(forKey: "imageIteration") as? Int {
+                    imageIteration = savedIteration
+                }
     }
     
 
@@ -68,10 +69,15 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         }
 //        print(pathImage)
         
+        let imageName = "yourFileName_\(imageIteration).jpg"
+        
         newItem = Item(name: name, category: category, price: price, desc: desc, img: pathImage)
         print(pathImage)
         
         db.insertProduct(contxt: contxt, product: newItem!)
+        
+        imageIteration += 1
+        UserDefaults.standard.set(imageIteration, forKey: "imageIteration")
         
     }
     

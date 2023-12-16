@@ -53,13 +53,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.productPrice.text = "Rp\(productList[indexPath.row].price!)"
         
         //
-        let imagePath = productList[indexPath.row].img
-        
-        if let imagePath = imagePath{
-            cell.productImage.image = UIImage(contentsOfFile: imagePath)
-        }else{
-            cell.productImage.image = UIImage(named: "defaultImage")
-        }
+        if let imagePath = productList[indexPath.row].img, let image = UIImage(contentsOfFile: imagePath) {
+               // Mengatur gambar pada UIImageView jika imagePath ada dan file gambar dapat dibaca
+               cell.productImage.image = image
+           } else {
+               // Mengatur gambar default jika imagePath tidak ada atau file gambar tidak dapat dibaca
+               cell.productImage.image = UIImage(named: "defaultImage")
+           }
         
         
         
