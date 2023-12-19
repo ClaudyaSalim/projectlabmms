@@ -21,3 +21,10 @@ struct Item {
     var desc:String?
     var img:String?
 }
+
+struct CartItem {
+    var userEmail: String?
+    var productName: String?
+    var qty: Int?
+    var price: Int?
+}

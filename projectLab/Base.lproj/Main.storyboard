@@ -832,6 +832,9 @@
                                 <color key="tintColor" red="0.98531919720000005" green="0.68380373719999998" blue="0.2068267167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add to Cart"/>
+                                <connections>
+                                    <action selector="onAddClick:" destination="Ts2-oh-PEL" eventType="touchUpInside" id="biz-1S-XUX"/>
+                                </connections>
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XzL-gs-FDJ">
                                 <rect key="frame" x="149.66666666666666" y="571" width="94" height="32"/>
@@ -874,7 +877,7 @@
                         <outlet property="categoryLabel" destination="Zn5-ns-Yem" id="IEU-kA-GFc"/>
                         <outlet property="nameLabel" destination="ZKC-L5-qV0" id="5zn-EE-NIQ"/>
                         <outlet property="priceLabel" destination="8Ji-7D-oBu" id="n7r-FM-q6y"/>
-                        <outlet property="qtyLabel" destination="qag-Y0-979" id="APD-mV-BRN"/>
+                        <outlet property="qtyField" destination="CLP-Tm-WdZ" id="Gz8-wA-jor"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOY-vT-P1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
