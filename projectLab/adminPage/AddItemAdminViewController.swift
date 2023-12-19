@@ -81,7 +81,7 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         
         
         let alert = UIAlertController(title: "Item Added", message: "Item successfully added into the cart!", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default){_ in
+        let okAction = UIAlertAction(title: "OK", style: .default){ _ in
             
                 UserDefaults.standard.removeObject(forKey: "userEmail")
                 
