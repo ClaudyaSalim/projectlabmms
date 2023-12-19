@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController {
         let AlertLogOut = UIAlertController(title: "Logout", message: "Are you sure want to logout?", preferredStyle: .alert)
             
         let OkAction = UIAlertAction(title: "Logout", style: .destructive) { _ in
-                // Perform logout actions
+            
                 UserDefaults.standard.removeObject(forKey: "userEmail")
                 
             if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginPage") {

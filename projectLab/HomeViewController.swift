@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var productList = [Item]()
     var item:Item?
+    
     @IBOutlet weak var productTable: UITableView!
     
     override func viewDidLoad() {

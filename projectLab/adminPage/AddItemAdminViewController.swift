@@ -79,6 +79,24 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         imageIteration += 1
         UserDefaults.standard.set(imageIteration, forKey: "imageIteration")
         
+        
+        let alert = UIAlertController(title: "Item Added", message: "Item successfully added into the cart!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default){_ in
+            
+                UserDefaults.standard.removeObject(forKey: "userEmail")
+                
+            if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "homeAdmin") {
+                    let loginView = loginVC as! AdminHomeViewController
+                    self.navigationController?.setViewControllers([loginView], animated: true)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+            
+        present(alert, animated: true, completion: nil)
+        
     }
     
     func showAlert(msg:String){
