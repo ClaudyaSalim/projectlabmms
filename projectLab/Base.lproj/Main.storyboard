@@ -907,7 +907,7 @@
         <!--Home-->
         <scene sceneID="rya-qa-vk0">
             <objects>
-                <viewController storyboardIdentifier="homeAdmin" id="pfQ-Ha-vmq" customClass="AdminHomeViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeAdmin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pfQ-Ha-vmq" customClass="AdminHomeViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dsy-0d-fsJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -922,7 +922,7 @@
                                 <rect key="frame" x="16" y="111" width="361" height="652"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="180" id="FWs-bF-04z">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="180" id="FWs-bF-04z" customClass="AdminProductTableViewCell" customModule="projectLab" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="361" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FWs-bF-04z" id="yxs-ka-IaT">
@@ -969,6 +969,12 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="D9P-1o-FbS" secondAttribute="trailing" constant="18" id="tjr-CL-GEN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryproduct" destination="lsM-R3-6ta" id="JI0-8L-6dy"/>
+                                            <outlet property="imageproduct" destination="vOD-1q-eRD" id="mgh-G2-4di"/>
+                                            <outlet property="nameproduct" destination="D9P-1o-FbS" id="bOX-Se-KyF"/>
+                                            <outlet property="priceproduct" destination="3eQ-TI-E1x" id="o5I-L1-uCW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1013,11 +1019,12 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="lZf-Vb-cQi"/>
                     <connections>
                         <outlet property="greetingLabel" destination="IcK-yJ-NqM" id="8Mg-Z1-IXR"/>
+                        <outlet property="productTable" destination="8so-BE-QKw" id="Bfn-gC-4Tg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMI-VA-1WA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="-847.18309859154931"/>
+            <point key="canvasLocation" x="-236" y="-835"/>
         </scene>
     </scenes>
     <resources>

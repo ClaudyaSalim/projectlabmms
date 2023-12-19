@@ -17,16 +17,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var productList = [Item]()
     var item:Item?
+    
     @IBOutlet weak var productTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // setup core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         contxt = appDelegate.persistentContainer.viewContext
 
-        // Do any additional setup after loading the view.
         let email = UserDefaults.standard.string(forKey: "userEmail")
         activeUser = db.getUser(contxt: contxt, email: email!)
         print(activeUser!.name)
@@ -53,12 +52,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.productCategory.text = productList[indexPath.row].category
         cell.productPrice.text = "Rp\(productList[indexPath.row].price!)"
         
-        //
         if let imagePath = productList[indexPath.row].img, let image = UIImage(contentsOfFile: imagePath) {
-               // Mengatur gambar pada UIImageView jika imagePath ada dan file gambar dapat dibaca
                cell.productImage.image = image
            } else {
-               // Mengatur gambar default jika imagePath tidak ada atau file gambar tidak dapat dibaca
                cell.productImage.image = UIImage(named: "defaultImage")
            }
                 
