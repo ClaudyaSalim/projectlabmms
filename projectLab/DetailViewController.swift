@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var qtyLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,8 @@ class DetailViewController: UIViewController {
             categoryLabel.text = item!.category!
             priceLabel.text = "Rp\(item!.price!)"
         }
+        
+        qtyStepper.addTarget(self, action: #selector(onStepClick(_:)), for: .valueChanged)
         
     }
     
