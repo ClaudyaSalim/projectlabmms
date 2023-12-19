@@ -147,4 +147,48 @@ class Database {
         
         return product ?? Item(name: nil, category: nil, price: nil, desc: nil)
     }
+    
+    
+    func insertToCart(contxt:NSManagedObjectContext, cartItem:CartItem) {
+        
+        var itemArr = [CartItem]()
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Cart", in: contxt)
+        
+        let newItem = NSManagedObject(entity: entity!, insertInto: contxt)
+        newItem.setValue(cartItem.userEmail, forKey: "useremail")
+        newItem.setValue(cartItem.productName, forKey: "productname")
+        newItem.setValue(cartItem.qty, forKey: "qty")
+        newItem.setValue(cartItem.price, forKey: "price")
+        do {
+            try contxt.save()
+            itemArr = getItems(contxt:contxt)
+        } catch {
+            print("Entity creation failed")
+        }
+    }
+    
+    
+    func getItems(contxt:NSManagedObjectContext) -> [CartItem] {
+        var itemArr = [CartItem]()
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                itemArr.append(CartItem(userEmail: data.value(forKey: "useremail") as! String, productName: data.value(forKey: "productname") as! String, qty: data.value(forKey: "qty") as! Int, price: data.value(forKey: "price") as! Int))
+            }
+            
+            for i in itemArr {
+                print(i)
+            }
+            
+        } catch {
+            print("Data loading failure")
+        }
+        
+        return itemArr
+    }
 }
