@@ -25,8 +25,6 @@ class DetailViewController: UIViewController {
             priceLabel.text = "Rp\(item!.price!)"
         }
         
-        qtyStepper.addTarget(self, action: #selector(onStepClick(_:)), for: .valueChanged)
-        
     }
     
     
