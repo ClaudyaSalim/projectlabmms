@@ -35,6 +35,7 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
         
         productTable.dataSource = self
         productTable.delegate = self
+        productTable.isEditing = true
         
         initData()
     }
@@ -46,6 +47,21 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         productList.count
     }
+    
+//    //delete
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            deleteProduct(at: indexPath)
+//        }
+//    }
+//
+//    func deleteProduct(at indexPath: IndexPath){
+//        let productDelete = productList[indexPath.row]
+//        db.deleteProduct(contxt: contxt, product: productDelete)
+//        productList.remove(at: indexPath.row)
+//        productTable.deleteRows(at: [indexPath], with: .fade)
+//    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
