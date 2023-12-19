@@ -44,12 +44,26 @@ class ProfileViewController: UIViewController {
     
     @IBAction func onClikLogout(_ sender: Any) {
         
-        UserDefaults.standard.removeObject(forKey: "userEmail")
+        let AlertLogOut = UIAlertController(title: "Logout", message: "Are you sure want to logout?", preferredStyle: .alert)
+            
+        let OkAction = UIAlertAction(title: "Logout", style: .destructive) { _ in
+                // Perform logout actions
+                UserDefaults.standard.removeObject(forKey: "userEmail")
+                
+            if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginPage") {
+                    let loginView = loginVC as! ViewController
+                    self.navigationController?.setViewControllers([loginView], animated: true)
+            }
+        }
         
-        if let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginPage") {
-            let loginView = loginVC as! ViewController
-            navigationController?.setViewControllers([loginView], animated: true)
-               }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        AlertLogOut.addAction(cancelAction)
+        AlertLogOut.addAction(OkAction)
+            
+        present(AlertLogOut, animated: true, completion: nil)
+
+
     }
     
 
