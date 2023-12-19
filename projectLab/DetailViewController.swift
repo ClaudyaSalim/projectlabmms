@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var qtyLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
