@@ -63,7 +63,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.productCategory.text = productList[indexPath.row].category
         cell.productPrice.text = "Rp\(productList[indexPath.row].price!)"
         
-        if let imagePath = productList[indexPath.row].img, let image = UIImage(contentsOfFile: imagePath) {
+        if let imagePath = productList[indexPath.row].img,
+            let image = UIImage(contentsOfFile: imagePath) {
                cell.productImage.image = image
            } else {
                cell.productImage.image = UIImage(named: "defaultImage")

@@ -127,7 +127,7 @@ class Database {
     func getProduct(contxt:NSManagedObjectContext, name:String) -> Item{
         var product:Item?
         
-        // check all user
+        // check all products
         getProducts(contxt: contxt)
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
@@ -190,5 +190,52 @@ class Database {
         }
         
         return itemArr
+    }
+    
+    
+    func getItem(contxt:NSManagedObjectContext, name:String) -> CartItem{
+        var item:CartItem?
+        
+        // check all items
+        getItems(contxt: contxt)
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        request.predicate = NSPredicate(format: "productname=%@", name)
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                item = CartItem(userEmail: data.value(forKey: "useremail") as! String, productName: data.value(forKey: "productname") as! String, qty: data.value(forKey: "qty") as! Int, price: data.value(forKey: "price") as! Int)
+            }
+            
+        } catch {
+            print("Data loading failure")
+        }
+        
+        return item ?? CartItem(userEmail: nil, productName: nil, qty: nil, price: nil)
+    }
+    
+    
+    func updateQty(contxt:NSManagedObjectContext, name:String, newQty:Int){
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        request.predicate = NSPredicate(format: "productname=%@", name)
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                data.setValue(newQty, forKey: "qty")
+            }
+            
+            try contxt.save()
+        } catch {
+            print("Data update failure")
+        }
+        
+        getItems(contxt: contxt)
     }
 }
