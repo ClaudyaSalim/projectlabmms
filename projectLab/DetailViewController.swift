@@ -20,6 +20,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var qtyField: UITextField!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,14 @@ class DetailViewController: UIViewController {
             nameLabel.text = item!.name!
             categoryLabel.text = item!.category!
             priceLabel.text = "Rp\(item!.price!)"
+            
+            if let imageData = item?.img {
+                let image = UIImage(contentsOfFile: imageData)
+                imageView.image = image
+            }else{
+                imageView.image = UIImage(named: "defaultImage")
+            }
+            
         }
         
     }
