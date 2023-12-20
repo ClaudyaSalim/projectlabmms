@@ -69,8 +69,21 @@ class DetailViewController: UIViewController {
         
         
         let cartItem = CartItem(userEmail: email!, productName: item!.name!, qty: qty, price: item!.price! * qty)
-        db.insertToCart(contxt: contxt, cartItem: cartItem)
-        // core data nya harus ada validasi kalo ada barang yg sama ditambahin ke cart nanti jatuhnya update quantity
+        let itemFound = db.getItem(contxt: contxt, name: cartItem.productName!)
+        print("This item is in cart", itemFound)
+        
+        // kalo ada barang yg sama ditambahin ke cart nanti jatuhnya update quantity
+        
+        if (itemFound.productName != nil){
+            // update database
+            print("update")
+            db.updateQty(contxt: contxt, name: itemFound.productName!, newQty: qty)
+        }
+        else {
+            // insert to cart
+            print("insert")
+            db.insertToCart(contxt: contxt, cartItem: cartItem)
+        }
         
         let alert = UIAlertController(title: "Item Added", message: "Item successfully added into the cart!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default){ _ in
@@ -83,25 +96,6 @@ class DetailViewController: UIViewController {
         
         alert.addAction(okAction)
         self.present(alert, animated: true)
-
-        let qty = Int(qtyField.text!)
-        // tambahin validasi di qty biar ga nil
-        let cartItem = CartItem(userEmail: email!, productName: item!.name!, qty: qty, price: item!.price!*qty!)
-        let itemFound = db.getItem(contxt: contxt, name: cartItem.productName!)
-        print("This item is in cart", itemFound)
-        
-        // kalo ada barang yg sama ditambahin ke cart nanti jatuhnya update quantity
-        
-        if (itemFound.productName != nil){
-            // update database
-            print("update")
-            db.updateQty(contxt: contxt, name: itemFound.productName!, newQty: qty!)
-        }
-        else {
-            // insert to cart
-            print("insert")
-            db.insertToCart(contxt: contxt, cartItem: cartItem)
-        }
         
     }
     
