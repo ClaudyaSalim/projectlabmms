@@ -694,7 +694,7 @@
         <!--Home-->
         <scene sceneID="Vvt-Gp-dOK">
             <objects>
-                <viewController id="2SX-BL-4Ly" customClass="HomeViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeUser" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2SX-BL-4Ly" customClass="HomeViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jGS-v4-K9g">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
