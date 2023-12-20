@@ -565,7 +565,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xl-qJ-Xtr">
-                                <rect key="frame" x="136" y="350" width="121" height="35"/>
+                                <rect key="frame" x="136" y="534" width="121" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.right.fill" catalog="system" title="Log Out">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
@@ -574,12 +574,23 @@
                                     <action selector="onClikLogout:" destination="giX-Fj-JuA" eventType="touchUpInside" id="rX5-LM-ZhS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0X-Op-fNh">
+                                <rect key="frame" x="135" y="409" width="123" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="exclamationmark.octagon" catalog="system" title="About Us"/>
+                                <connections>
+                                    <action selector="aboutusOnClicked:" destination="giX-Fj-JuA" eventType="touchUpInside" id="gTS-P1-UXq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QmR-nc-KyS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QmR-nc-KyS" firstAttribute="bottom" secondItem="9xl-qJ-Xtr" secondAttribute="bottom" constant="384" id="31c-o4-H7Q"/>
+                            <constraint firstItem="QmR-nc-KyS" firstAttribute="bottom" secondItem="9xl-qJ-Xtr" secondAttribute="bottom" constant="200" id="31c-o4-H7Q"/>
                             <constraint firstItem="9xl-qJ-Xtr" firstAttribute="leading" secondItem="QmR-nc-KyS" secondAttribute="leading" constant="136" id="9O6-px-bub"/>
+                            <constraint firstItem="H0X-Op-fNh" firstAttribute="leading" secondItem="QmR-nc-KyS" secondAttribute="leading" constant="135" id="Qs8-GW-Koy"/>
+                            <constraint firstItem="QmR-nc-KyS" firstAttribute="trailing" secondItem="H0X-Op-fNh" secondAttribute="trailing" constant="135" id="eCT-F0-aVi"/>
+                            <constraint firstItem="9xl-qJ-Xtr" firstAttribute="top" secondItem="H0X-Op-fNh" secondAttribute="bottom" constant="90" id="fvX-WY-a3v"/>
                             <constraint firstItem="QmR-nc-KyS" firstAttribute="trailing" secondItem="9xl-qJ-Xtr" secondAttribute="trailing" constant="136" id="teY-gA-8ah"/>
                         </constraints>
                     </view>
@@ -1031,6 +1042,7 @@
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="exclamationmark.octagon" catalog="system" width="128" height="112"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="logo_gameHI" width="500" height="500"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

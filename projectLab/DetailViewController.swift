@@ -68,7 +68,7 @@ class DetailViewController: UIViewController {
         }
         
         
-        let cartItem = CartItem(userEmail: email!, productName: item!.name!, qty: qty, price: item!.price! * qty)
+        let cartItem = CartItem(userEmail: email!, productName: item!.name!, qty: qty, price: item!.price!*qty)
         let itemFound = db.getItem(contxt: contxt, name: cartItem.productName!)
         print("This item is in cart", itemFound)
         
