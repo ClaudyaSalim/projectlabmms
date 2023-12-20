@@ -15,10 +15,16 @@ class DetailViewController: UIViewController {
     var db = Database()
     var contxt: NSManagedObjectContext!
     
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    @IBOutlet weak var descLabel: UILabel!
+    
     @IBOutlet weak var qtyField: UITextField!
+    
+    
     
     
     override func viewDidLoad() {

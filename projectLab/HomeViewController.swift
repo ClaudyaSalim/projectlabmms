@@ -38,7 +38,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func initData(){
+        let codProduct = Item(name: "Call of Duty", category: "COD", price: 5999, desc: "Description for COD", img: "game-COD")
+                let ffProduct = Item(name: "Free Fire", category: "FF", price: 2999, desc: "Description for FF", img: "game-FF")
+                let narutoProduct = Item(name: "Naruto Ultimate Ninja Storm", category: "Naruto", price: 3999, desc: "Description for Naruto", img: "game-naruto")
+        
+        productList = [codProduct, ffProduct, narutoProduct]
+
         productList = db.getProducts(contxt: contxt)
+        
+        let existingProducts = db.getProducts(contxt: contxt)
+        productList.append(contentsOf: existingProducts)
+        
+        productTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
