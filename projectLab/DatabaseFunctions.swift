@@ -218,7 +218,7 @@ class Database {
     }
     
     
-    func updateQty(contxt:NSManagedObjectContext, name:String, newQty:Int){
+    func updateQty(contxt:NSManagedObjectContext, name:String, newQty:Int, newPrice:Int){
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
         
@@ -229,6 +229,7 @@ class Database {
             
             for data in result {
                 data.setValue(newQty, forKey: "qty")
+                data.setValue(newPrice, forKey: "price")
             }
             
             try contxt.save()

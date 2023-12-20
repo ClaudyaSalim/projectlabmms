@@ -48,19 +48,14 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
         productList.count
     }
     
-//    //delete
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            deleteProduct(at: indexPath)
-//        }
-//    }
-//
-//    func deleteProduct(at indexPath: IndexPath){
-//        let productDelete = productList[indexPath.row]
-//        db.deleteProduct(contxt: contxt, product: productDelete)
-//        productList.remove(at: indexPath.row)
-//        productTable.deleteRows(at: [indexPath], with: .fade)
-//    }
+    
+//  delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            productList.remove(at: indexPath.row)
+            productTable.reloadData()
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

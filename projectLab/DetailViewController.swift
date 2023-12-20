@@ -77,7 +77,7 @@ class DetailViewController: UIViewController {
         if (itemFound.productName != nil){
             // update database
             print("update")
-            db.updateQty(contxt: contxt, name: itemFound.productName!, newQty: qty)
+            db.updateQty(contxt: contxt, name: item!.name!, newQty: qty, newPrice: qty * item!.price!)
         }
         else {
             // insert to cart
