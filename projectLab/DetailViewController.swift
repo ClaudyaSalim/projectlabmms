@@ -15,12 +15,18 @@ class DetailViewController: UIViewController {
     var db = Database()
     var contxt: NSManagedObjectContext!
     
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    @IBOutlet weak var descLabel: UILabel!
+    
     @IBOutlet weak var qtyField: UITextField!
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    
     
     
     override func viewDidLoad() {
@@ -68,7 +74,7 @@ class DetailViewController: UIViewController {
         }
         
         
-        let cartItem = CartItem(userEmail: email!, productName: item!.name!, qty: qty, price: item!.price! * qty)
+        let cartItem = CartItem(userEmail: email!, productName: item!.name!, qty: qty, price: item!.price!*qty)
         let itemFound = db.getItem(contxt: contxt, name: cartItem.productName!)
         print("This item is in cart", itemFound)
         

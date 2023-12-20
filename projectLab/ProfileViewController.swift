@@ -66,6 +66,18 @@ class ProfileViewController: UIViewController {
 
     }
     
+    
+    @IBAction func aboutusOnClicked(_ sender: Any) {
+        
+        let AlertLogOut = UIAlertController(title: "Undermaintenance [ ! ]", message: "This button is still in the working stage, Kindly wait for the next update :D ", preferredStyle: .alert)
+            
+        let OkAction = UIAlertAction(title: "OK", style: .default)
+        
+        AlertLogOut.addAction(OkAction)
+        present(AlertLogOut, animated: true, completion: nil)
+        
+    }
+    
 
     /*
     // MARK: - Navigation
