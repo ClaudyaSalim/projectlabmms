@@ -57,7 +57,15 @@ class DetailViewController: UIViewController {
             self.present(alerts, animated: true)
             return
         }
-        // tambahin validasi di qty biar ga nil
+        // tambahin validasi di qty biar ga nil dan nol
+        
+        if qty == 0 {
+            let alerts = UIAlertController(title: "Error", message: "Quantity must be more than 0", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alerts.addAction(okAction)
+            self.present(alerts, animated: true)
+            return
+        }
         
         
         let cartItem = CartItem(userEmail: email!, productName: item!.name!, qty: qty, price: item!.price! * qty)
