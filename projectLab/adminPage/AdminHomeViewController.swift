@@ -53,6 +53,7 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             productList.remove(at: indexPath.row)
+            db.deleteProduct(contxt: contxt, name: productList[indexPath.row].name!)
             productTable.reloadData()
         }
     }
