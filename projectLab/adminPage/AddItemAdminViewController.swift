@@ -60,13 +60,16 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         let category = categoryField.text!
         let price = Int(priceField.text!)
         let desc = descField.text!
-        let pathImage = imagePath!
         
-        
-        if(name=="" || category=="" || price==nil || desc=="" || pathImage == ""){
+        if(name == "" || category == "" || price == nil || desc == ""){
             showAlert(msg: "You must fill all fields!")
             return
         }
+        
+        guard let pathImage = imagePath else {
+               showAlert(msg: "Please select an image.")
+               return
+           }
 //        print(pathImage)
         
         let imageName = "yourFileName_\(imageIteration).jpg"
