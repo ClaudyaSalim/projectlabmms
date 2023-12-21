@@ -63,7 +63,7 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         let pathImage = imagePath!
         
         
-        if(name=="" || category=="" || price==nil || desc==""){
+        if(name=="" || category=="" || price==nil || desc=="" || pathImage == ""){
             showAlert(msg: "You must fill all fields!")
             return
         }

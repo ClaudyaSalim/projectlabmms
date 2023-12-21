@@ -15,6 +15,7 @@
 		05A5B2842B1B2A77000C6FF3 /* RegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5B2832B1B2A77000C6FF3 /* RegisViewController.swift */; };
 		05A5B2872B1B2DA9000C6FF3 /* projectLab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05A5B2852B1B2DA9000C6FF3 /* projectLab.xcdatamodeld */; };
 		05A5B2AE2B1B3759000C6FF3 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5B2AD2B1B3759000C6FF3 /* TabViewController.swift */; };
+		05B1B6562B34423400027473 /* MyCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1B6552B34423400027473 /* MyCartViewController.swift */; };
 		05B790E12B2C3A4A0069764B /* AddItemAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B790E02B2C3A4A0069764B /* AddItemAdminViewController.swift */; };
 		05B790E32B2C577A0069764B /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B790E22B2C577A0069764B /* ProductTableViewCell.swift */; };
 		05B790E52B2D39940069764B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B790E42B2D39940069764B /* DetailViewController.swift */; };
@@ -37,6 +38,7 @@
 		05A5B2832B1B2A77000C6FF3 /* RegisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisViewController.swift; sourceTree = "<group>"; };
 		05A5B2862B1B2DA9000C6FF3 /* projectLab.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = projectLab.xcdatamodel; sourceTree = "<group>"; };
 		05A5B2AD2B1B3759000C6FF3 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		05B1B6552B34423400027473 /* MyCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartViewController.swift; sourceTree = "<group>"; };
 		05B790E02B2C3A4A0069764B /* AddItemAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemAdminViewController.swift; sourceTree = "<group>"; };
 		05B790E22B2C577A0069764B /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		05B790E42B2D39940069764B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				056798EE2B21908500A515A4 /* DatabaseFunctions.swift */,
 				05B790E22B2C577A0069764B /* ProductTableViewCell.swift */,
 				05B9191C2B2D81CC00EEA7E8 /* ProfileViewController.swift */,
+				05B1B6552B34423400027473 /* MyCartViewController.swift */,
 			);
 			path = projectLab;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				05F5DAF42B08A5720028DB4B /* AppDelegate.swift in Sources */,
 				05B9191D2B2D81CC00EEA7E8 /* ProfileViewController.swift in Sources */,
 				05F5DAF62B08A5720028DB4B /* SceneDelegate.swift in Sources */,
+				05B1B6562B34423400027473 /* MyCartViewController.swift in Sources */,
 				05B790E52B2D39940069764B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
