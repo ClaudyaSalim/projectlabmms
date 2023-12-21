@@ -149,6 +149,26 @@ class Database {
     }
     
     
+    func deleteProduct(contxt:NSManagedObjectContext, name:String){
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        
+        request.predicate = NSPredicate(format: "name=%@", name)
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                contxt.delete(data)
+            }
+            
+            try contxt.save()
+        } catch {
+            print("Data deletion failure.")
+        }
+    }
+    
+    
     func insertToCart(contxt:NSManagedObjectContext, cartItem:CartItem) {
         
         var itemArr = [CartItem]()
