@@ -43,10 +43,10 @@ class DetailViewController: UIViewController {
             categoryLabel.text = item!.category!
             priceLabel.text = "Rp\(item!.price!)"
             
-            if let imageData = item?.img! {
-                let image = UIImage(contentsOfFile: imageData)
+            print(item?.img)
+            if let imagePath = item?.img {
+                let image = UIImage(contentsOfFile: imagePath)
                 imageView.image = image
-                print(imageData)
             }else{
                 imageView.image = UIImage(named: "defaultImage")
             }

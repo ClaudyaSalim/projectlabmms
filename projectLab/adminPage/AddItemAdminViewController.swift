@@ -113,21 +113,34 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     func saveImageToDocumentDirectory(image: UIImage, fileName: String) {
-        if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        let directoryPath = getDocumentsDirectoryURL().appendingPathComponent("YourImageDirectory")
+            
+            if !FileManager.default.fileExists(atPath: directoryPath.path) {
+                do {
+                    try FileManager.default.createDirectory(at: directoryPath, withIntermediateDirectories: true, attributes: nil)
+                } catch {
+                    print("Error creating image directory: \(error)")
+                    return
+                }
+            }
+            
+            let fileURL = directoryPath.appendingPathComponent(fileName)
             
             if let imageData = image.jpegData(compressionQuality: 1.0) {
                 do {
                     try imageData.write(to: fileURL)
                     print("Image saved successfully at: \(fileURL.absoluteString)")
                     
-                    //
+                    // Set the imagePath to be used later
                     imagePath = fileURL.path
                 } catch {
                     print("Error saving image: \(error)")
                 }
             }
-        }
+    }
+    
+    func getDocumentsDirectoryURL() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
 
 }
