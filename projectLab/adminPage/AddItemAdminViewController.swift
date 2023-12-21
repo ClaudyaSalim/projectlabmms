@@ -113,7 +113,7 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     func saveImageToDocumentDirectory(image: UIImage, fileName: String) {
-        let directoryPath = getDocumentsDirectoryURL().appendingPathComponent("YourImageDirectory")
+        let directoryPath = getDocumentsDirectoryURL().appendingPathComponent("ImageDirectory")
             
             if !FileManager.default.fileExists(atPath: directoryPath.path) {
                 do {
