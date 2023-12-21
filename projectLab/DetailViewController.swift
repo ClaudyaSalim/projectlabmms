@@ -43,9 +43,10 @@ class DetailViewController: UIViewController {
             categoryLabel.text = item!.category!
             priceLabel.text = "Rp\(item!.price!)"
             
-            if let imageData = item?.img {
+            if let imageData = item?.img! {
                 let image = UIImage(contentsOfFile: imageData)
                 imageView.image = image
+                print(imageData)
             }else{
                 imageView.image = UIImage(named: "defaultImage")
             }
@@ -53,6 +54,8 @@ class DetailViewController: UIViewController {
         }
         
     }
+    
+    
     
     @IBAction func onAddClick(_ sender: Any) {
         guard let qtyTxt = qtyField.text, let qty = Int(qtyTxt) else{
