@@ -68,8 +68,8 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         contxt = appDelegate.persistentContainer.viewContext
         if let savedIteration = UserDefaults.standard.value(forKey: "imageIteration") as? Int {
-                    imageIteration = savedIteration
-                }
+            imageIteration = savedIteration
+        }
     }
     
 

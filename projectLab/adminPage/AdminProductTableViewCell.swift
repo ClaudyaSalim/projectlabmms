@@ -8,16 +8,10 @@
 import UIKit
 
 class AdminProductTableViewCell: UITableViewCell {
-
-    
     
     @IBOutlet weak var imageproduct: UIImageView!
-    
     @IBOutlet weak var nameproduct: UILabel!
-    
     @IBOutlet weak var categoryproduct: UILabel!
-    
-    
     @IBOutlet weak var priceproduct: UILabel!
     
     override func awakeFromNib() {
