@@ -26,10 +26,10 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         contxt = appDelegate.persistentContainer.viewContext
-
+        
         let email = UserDefaults.standard.string(forKey: "userEmail")
         activeUser = db.getUser(contxt: contxt!, email: email!)
         print(activeUser!.name)
@@ -38,6 +38,15 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cartTable.delegate = self
         
         cartList = db.getItemsByUser(contxt: contxt!, userEmail: email!)
+        
+        var price = 0
+        
+        for cart in cartList {
+            price += cart.price!
+        }
+        
+        totalPayment.text = "Rp\(price)"
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -66,5 +75,10 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
         return cell
     }
-
+    
+    
+    @IBAction func onConfirmClick(_ sender: Any) {
+        db.deleteCart(contxt: contxt!)
+    }
+    
 }
