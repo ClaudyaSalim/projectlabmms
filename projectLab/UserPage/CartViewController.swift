@@ -16,8 +16,14 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var cartList = [CartItem]()
     
-    @IBOutlet weak var cartTable: UITableView!    
-
+    
+    @IBOutlet weak var totalPayment: UILabel!
+    
+    @IBOutlet weak var cartTable: UITableView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

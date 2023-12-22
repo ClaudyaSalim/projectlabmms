@@ -748,6 +748,7 @@
                     <tabBarItem key="tabBarItem" title="Transaction" image="cart.fill" catalog="system" id="RB1-hR-7YS"/>
                     <connections>
                         <outlet property="cartTable" destination="NC7-rl-Bjj" id="pf0-AH-EdE"/>
+                        <outlet property="totalPayment" destination="usT-8l-vzK" id="PZm-UM-tDq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lv-9p-9hp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
