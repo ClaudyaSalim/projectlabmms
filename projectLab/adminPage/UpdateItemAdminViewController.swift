@@ -57,6 +57,7 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
         present(picker,animated: true)
     }
     
+    
     @IBAction func onConfirmClick(_ sender: Any) {
         var newItem:Item?
         let name = nameGameField.text!
@@ -83,6 +84,7 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
         db.updateProduct(contxt: contxt, newProduct: newItem!, oldProduct: item!)
         
         // bikin update massal ke semua cart user yg produknya sama
+        db.updateItemsByProduct(contxt: contxt, newItem: newItem!, oldProductName: item!.name!)
         
         imageIteration += 1
         UserDefaults.standard.set(imageIteration, forKey: "imageIteration")

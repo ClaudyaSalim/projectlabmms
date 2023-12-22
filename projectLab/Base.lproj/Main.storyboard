@@ -186,6 +186,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm">
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onConfirmClick:" destination="0Y0-x6-3TP" eventType="touchUpInside" id="omy-SC-ZMW"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ik4-71-nGx">
                                 <rect key="frame" x="16" y="488.66666666666674" width="361" height="215"/>
