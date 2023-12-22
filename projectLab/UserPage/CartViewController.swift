@@ -15,6 +15,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var contxt: NSManagedObjectContext?
     
     var cartList = [CartItem]()
+    var price = 0
     
     
     @IBOutlet weak var totalPayment: UILabel!
@@ -26,10 +27,10 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         contxt = appDelegate.persistentContainer.viewContext
-
+        
         let email = UserDefaults.standard.string(forKey: "userEmail")
         activeUser = db.getUser(contxt: contxt!, email: email!)
         print(activeUser!.name)
@@ -38,17 +39,29 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cartTable.delegate = self
         
         cartList = db.getItemsByUser(contxt: contxt!, userEmail: email!)
+        
+        for cart in cartList {
+            price += cart.price!
+        }
+        
+        totalPayment.text = "Rp\(price)"
+        
     }
     
     
     @IBAction func confirmLabel(_ sender: Any) {
-//        let confirmPay = ConfirmViewController()
-//        navigationController?.pushViewController(confirmPay, animated: true)
-        if let confirmPay = storyboard?.instantiateViewController(withIdentifier: "confirmViewController"){
-            let confirmPageView = confirmPay as! ConfirmViewController
-            
-            navigationController?.setViewControllers([confirmPageView], animated: true)
+        if(price != 0){
+            db.deleteCart(contxt: contxt!, userEmail: activeUser!.email!)
+            if let confirmPay = storyboard?.instantiateViewController(withIdentifier: "confirmViewController"){
+                let confirmPageView = confirmPay as! ConfirmViewController
+                
+                navigationController?.setViewControllers([confirmPageView], animated: true)
+            }
         }
+        else {
+            showAlert()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,5 +90,16 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
         return cell
     }
-
+    
+    func showAlert(){
+        
+        let alert = UIAlertController(title: "Your Cart is Empty!", message: "At least 1 item should be in the cart!", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
+    
 }
