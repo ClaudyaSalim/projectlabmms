@@ -64,6 +64,15 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    //  delete
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                db.deleteCartByUserProduct(contxt: contxt!, productName: cartList[indexPath.row].productName!, userEmail: activeUser!.email!)
+                cartList.remove(at: indexPath.row)
+                cartTable.reloadData()
+            }
+        }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }

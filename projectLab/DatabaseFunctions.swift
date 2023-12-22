@@ -370,4 +370,23 @@ class Database {
             print("Data deletion failure.")
         }
     }
+    
+    
+    func deleteCartByUserProduct(contxt:NSManagedObjectContext, productName:String, userEmail:String){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [NSPredicate(format: "useremail=%@", userEmail), NSPredicate(format: "productname=%@", productName)])
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                contxt.delete(data)
+            }
+            
+            try contxt.save()
+        } catch {
+            print("Data deletion failure.")
+        }
+    }
 }
