@@ -19,14 +19,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
     @IBOutlet weak var descLabel: UILabel!
-    
     @IBOutlet weak var qtyField: UITextField!
-    
     @IBOutlet weak var imageView: UIImageView!
-    
-    
     
     
     override func viewDidLoad() {
@@ -45,12 +40,12 @@ class DetailViewController: UIViewController {
             descLabel.text = item!.desc!
             
             print(item?.img)
-//            if let imagePath = item?.img {
-//                let image = UIImage(contentsOfFile: imagePath)
-//                imageView.image = image
-//            }else{
-//                imageView.image = UIImage(named: "defaultImage")
-//            }
+            if let imagePath = item!.img {
+                let image = UIImage(contentsOfFile: imagePath)
+                imageView.image = image
+            }else{
+                imageView.image = UIImage(named: "defaultImage")
+            }
             
         }
         
