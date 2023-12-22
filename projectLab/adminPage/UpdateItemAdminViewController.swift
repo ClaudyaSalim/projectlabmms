@@ -45,8 +45,6 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
         }else{
             imageView.image = UIImage(named: "defaultImage")
         }
-        
-        
     }
     
     @IBAction func btnImagePicker(_ sender: Any) {
@@ -57,6 +55,7 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
         present(picker,animated: true)
     }
     
+
     @IBAction func onConfirmClick(_ sender: Any) {
         var newItem:Item?
         let name = nameGameField.text!
@@ -69,14 +68,22 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
             return
         }
         
-        guard let pathImage = imagePath else {
-               showAlert(msg: "Please select an image.")
-               return
-           }
+//        guard let pathImage = imagePath else {
+//               showAlert(msg: "Please select an image.")
+//               return
+//           }
+        
+        let pathImage = imagePath
         
         let imageName = "yourFileName_\(imageIteration).jpg"
         
-        newItem = Item(name: name, category: category, price: price, desc: desc, img: pathImage)
+        if pathImage == nil{
+            newItem = Item(name: name, category: category, price: price, desc: desc, img: item!.img)
+        }else{
+            newItem = Item(name: name, category: category, price: price, desc: desc, img: pathImage)
+        }
+            
+            
         print(pathImage)
         
 
@@ -103,6 +110,8 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
             
         present(alert, animated: true, completion: nil)
     }
+    
+    
     
     func showAlert(msg:String){
         
