@@ -31,7 +31,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cartTable.dataSource = self
         cartTable.delegate = self
         
-        cartList = db.getItems(contxt: contxt!, userEmail: email!)
+        cartList = db.getItemsByUser(contxt: contxt!, userEmail: email!)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

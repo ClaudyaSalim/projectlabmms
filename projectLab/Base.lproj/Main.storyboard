@@ -953,6 +953,7 @@
                     <connections>
                         <outlet property="categoryLabel" destination="Zn5-ns-Yem" id="IEU-kA-GFc"/>
                         <outlet property="descLabel" destination="uDt-PJ-csn" id="CF0-yQ-a12"/>
+                        <outlet property="imageView" destination="DfQ-WM-nZG" id="GPz-HR-euS"/>
                         <outlet property="nameLabel" destination="ZKC-L5-qV0" id="7W9-kW-7lf"/>
                         <outlet property="priceLabel" destination="8Ji-7D-oBu" id="n7r-FM-q6y"/>
                         <outlet property="qtyField" destination="CLP-Tm-WdZ" id="U6v-5G-ZEx"/>
