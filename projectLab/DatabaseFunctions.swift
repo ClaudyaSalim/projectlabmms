@@ -239,6 +239,7 @@ class Database {
     }
     
     
+    
     func getItemByUserAndProduct(contxt:NSManagedObjectContext, name:String, userEmail:String) -> CartItem{
         var item:CartItem?
         
@@ -283,7 +284,32 @@ class Database {
             print("Data update failure")
         }
         
-//        getItems(contxt: contxt, userEmail: <#T##String#>)
+        
+    }
+    
+    
+    
+    func updateItemsByProduct(contxt:NSManagedObjectContext, newItem:Item, oldProductName:String){
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        request.predicate = NSPredicate(format: "productname=%@", oldProductName)
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                let qty = data.value(forKey: "qty") as! Int
+                let price = newItem.price! as Int
+                let newPrice = qty * price
+                data.setValue(newItem.name, forKey: "productname")
+                data.setValue(newPrice, forKey: "price")
+            }
+            
+        } catch {
+            print("Data loading failure")
+        }
+        
     }
     
     
