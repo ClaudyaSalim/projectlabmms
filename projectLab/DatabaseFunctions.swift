@@ -207,14 +207,14 @@ class Database {
         newItem.setValue(cartItem.price, forKey: "price")
         do {
             try contxt.save()
-            itemArr = getItems(contxt:contxt, userEmail: cartItem.userEmail!)
+            itemArr = getItemsByUser(contxt:contxt, userEmail: cartItem.userEmail!)
         } catch {
             print("Entity creation failed")
         }
     }
     
     
-    func getItems(contxt:NSManagedObjectContext, userEmail:String) -> [CartItem] {
+    func getItemsByUser(contxt:NSManagedObjectContext, userEmail:String) -> [CartItem] {
         var itemArr = [CartItem]()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
@@ -239,11 +239,11 @@ class Database {
     }
     
     
-    func getItem(contxt:NSManagedObjectContext, name:String, userEmail:String) -> CartItem{
+    func getItemByUserAndProduct(contxt:NSManagedObjectContext, name:String, userEmail:String) -> CartItem{
         var item:CartItem?
         
         // check all items
-        getItems(contxt: contxt, userEmail: userEmail)
+        getItemsByUser(contxt: contxt, userEmail: userEmail)
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
         

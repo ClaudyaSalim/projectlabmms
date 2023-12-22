@@ -70,6 +70,8 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
         // update product
         db.updateProduct(contxt: contxt, newProduct: newItem!, oldProduct: item!)
         
+        // bikin update massal ke semua cart user yg produknya sama
+        
         imageIteration += 1
         UserDefaults.standard.set(imageIteration, forKey: "imageIteration")
         
