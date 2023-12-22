@@ -15,6 +15,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var contxt: NSManagedObjectContext?
     
     var cartList = [CartItem]()
+    var price = 0
     
     
     @IBOutlet weak var totalPayment: UILabel!
@@ -39,8 +40,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cartList = db.getItemsByUser(contxt: contxt!, userEmail: email!)
         
-        var price = 0
-        
         for cart in cartList {
             price += cart.price!
         }
@@ -51,13 +50,18 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     @IBAction func confirmLabel(_ sender: Any) {
-//        let confirmPay = ConfirmViewController()
-//        navigationController?.pushViewController(confirmPay, animated: true)
-        if let confirmPay = storyboard?.instantiateViewController(withIdentifier: "confirmViewController"){
-            let confirmPageView = confirmPay as! ConfirmViewController
-            
-            navigationController?.setViewControllers([confirmPageView], animated: true)
+        if(price != 0){
+            db.deleteCart(contxt: contxt!, userEmail: activeUser!.email!)
+            if let confirmPay = storyboard?.instantiateViewController(withIdentifier: "confirmViewController"){
+                let confirmPageView = confirmPay as! ConfirmViewController
+                
+                navigationController?.setViewControllers([confirmPageView], animated: true)
+            }
         }
+        else {
+            showAlert()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -87,9 +91,15 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    
-    @IBAction func onConfirmClick(_ sender: Any) {
-        db.deleteCart(contxt: contxt!)
+    func showAlert(){
+        
+        let alert = UIAlertController(title: "Your Cart is Empty!", message: "At least 1 item should be in the cart!", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
     }
     
 }

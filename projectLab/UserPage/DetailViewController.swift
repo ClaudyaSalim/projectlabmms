@@ -83,14 +83,22 @@ class DetailViewController: UIViewController {
             // update database
             print("update")
             db.updateQty(contxt: contxt, userEmail: email!, name: item!.name!, newQty: qty, newPrice: qty * item!.price!)
+            showAlert(title: "Item Updated", msg: "Item quantity in cart has successfully updated!")
         }
         else {
             // insert to cart
             print("insert")
             db.insertToCart(contxt: contxt, cartItem: cartItem)
+            showAlert(title: "Item Added", msg: "Item successfully added into the cart!")
         }
         
-        let alert = UIAlertController(title: "Item Added", message: "Item successfully added into the cart!", preferredStyle: .alert)
+        
+        
+    }
+    
+
+    func showAlert(title:String, msg:String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default){ _ in
                             
             if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "MainPage") {
@@ -101,8 +109,5 @@ class DetailViewController: UIViewController {
         
         alert.addAction(okAction)
         self.present(alert, animated: true)
-        
     }
-    
-
 }
