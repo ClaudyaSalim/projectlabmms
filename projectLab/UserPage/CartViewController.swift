@@ -16,8 +16,14 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var cartList = [CartItem]()
     
-    @IBOutlet weak var cartTable: UITableView!    
-
+    
+    @IBOutlet weak var totalPayment: UILabel!
+    
+    @IBOutlet weak var cartTable: UITableView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,7 +66,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.productName.text = product.name
         cell.productCategory.text = product.category
-        cell.productPrice.text = "Rp\(product.price!)"
+        cell.productPrice.text = "Rp\(cartList[indexPath.row].price!)"
         cell.qty.text = "\(cartList[indexPath.row].qty!)"
         if let imagePath = product.img,
             let image = UIImage(contentsOfFile: imagePath) {
