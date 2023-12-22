@@ -42,6 +42,7 @@ class DetailViewController: UIViewController {
             nameLabel.text = item!.name!
             categoryLabel.text = item!.category!
             priceLabel.text = "Rp\(item!.price!)"
+            descLabel.text = item!.desc!
             
             print(item?.img)
 //            if let imagePath = item?.img {
