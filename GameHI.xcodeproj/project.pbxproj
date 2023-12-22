@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0503B10B2B1D96910073D1A0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503B10A2B1D96910073D1A0 /* Model.swift */; };
 		05080C512B295FE900FA0502 /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080C502B295FE900FA0502 /* AdminHomeViewController.swift */; };
+		0551AC422B35932300CA2A10 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0551AC412B35932300CA2A10 /* ConfirmViewController.swift */; };
 		055EE6EF2B26F25500947151 /* UpdateItemAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EE6EE2B26F25500947151 /* UpdateItemAdminViewController.swift */; };
 		056798EF2B21908500A515A4 /* DatabaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056798EE2B21908500A515A4 /* DatabaseFunctions.swift */; };
 		056798F12B21927300A515A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056798F02B21927200A515A4 /* HomeViewController.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		0503B10A2B1D96910073D1A0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		05080C502B295FE900FA0502 /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
+		0551AC412B35932300CA2A10 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		055EE6EE2B26F25500947151 /* UpdateItemAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemAdminViewController.swift; sourceTree = "<group>"; };
 		056798EE2B21908500A515A4 /* DatabaseFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseFunctions.swift; sourceTree = "<group>"; };
 		056798F02B21927200A515A4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				05A5B2AD2B1B3759000C6FF3 /* TabViewController.swift */,
 				05F5DAF52B08A5720028DB4B /* SceneDelegate.swift */,
 				05F5DAF92B08A5720028DB4B /* Main.storyboard */,
+				0551AC412B35932300CA2A10 /* ConfirmViewController.swift */,
 				05A5B2852B1B2DA9000C6FF3 /* projectLab.xcdatamodeld */,
 				05F5DAFC2B08A5720028DB4B /* Assets.xcassets */,
 				05F5DAFE2B08A5720028DB4B /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				05F5DAF42B08A5720028DB4B /* AppDelegate.swift in Sources */,
 				05781A062B3557A700D940F8 /* CartTableViewCell.swift in Sources */,
 				05B9191D2B2D81CC00EEA7E8 /* ProfileViewController.swift in Sources */,
+				0551AC422B35932300CA2A10 /* ConfirmViewController.swift in Sources */,
 				05F5DAF62B08A5720028DB4B /* SceneDelegate.swift in Sources */,
 				05B1B6562B34423400027473 /* MyCartViewController.swift in Sources */,
 				05781A042B3553EA00D940F8 /* CartViewController.swift in Sources */,

@@ -49,6 +49,17 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    
+    @IBAction func confirmLabel(_ sender: Any) {
+//        let confirmPay = ConfirmViewController()
+//        navigationController?.pushViewController(confirmPay, animated: true)
+        if let confirmPay = storyboard?.instantiateViewController(withIdentifier: "confirmViewController"){
+            let confirmPageView = confirmPay as! ConfirmViewController
+            
+            navigationController?.setViewControllers([confirmPageView], animated: true)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }
