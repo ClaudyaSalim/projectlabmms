@@ -33,9 +33,22 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
         if let savedIteration = UserDefaults.standard.value(forKey: "imageIteration") as? Int {
             imageIteration = savedIteration
         }
+        
+        nameGameField.text = item!.name!
+        categoryField.text = item!.category!
+        priceField.text =  "\(item!.price!)"
+        descriptionField.text = item!.desc!
+        
+        if let imagePath = item!.img {
+            let image = UIImage(contentsOfFile: imagePath)
+            imageView.image = image
+        }else{
+            imageView.image = UIImage(named: "defaultImage")
+        }
+        
+        
     }
     
-    // == unfinished ==
     @IBAction func btnImagePicker(_ sender: Any) {
         let picker = UIImagePickerController()
         
@@ -60,14 +73,13 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
                showAlert(msg: "Please select an image.")
                return
            }
-//        print(pathImage)
         
         let imageName = "yourFileName_\(imageIteration).jpg"
         
         newItem = Item(name: name, category: category, price: price, desc: desc, img: pathImage)
         print(pathImage)
         
-        // update product
+
         db.updateProduct(contxt: contxt, newProduct: newItem!, oldProduct: item!)
         
         // bikin update massal ke semua cart user yg produknya sama
