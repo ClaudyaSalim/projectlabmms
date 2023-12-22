@@ -10,6 +10,11 @@ import CoreData
 
 class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    var item:Item?
+    var email:String?
+    var db = Database()
+ 
+    
     @IBOutlet weak var nameGameField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var priceField: UITextField!
