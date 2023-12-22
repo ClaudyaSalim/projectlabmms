@@ -9,11 +9,19 @@ import UIKit
 
 class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    var item:Item?
+    var email:String?
+    var db = Database()
+ 
+    
     @IBOutlet weak var nameGameField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
