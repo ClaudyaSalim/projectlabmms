@@ -184,6 +184,7 @@ class Database {
                 data.setValue(newProduct.price, forKey: "price")
                 data.setValue(newProduct.desc, forKey: "desc")
                 data.setValue(newProduct.img, forKey: "image")
+                updateCartItemsAfterProduct(contxt: contxt, newProduct: newProduct, oldProductName: oldProduct.name!)
             }
             
             try contxt.save()
@@ -206,17 +207,18 @@ class Database {
         newItem.setValue(cartItem.price, forKey: "price")
         do {
             try contxt.save()
-            itemArr = getItems(contxt:contxt)
+            itemArr = getItems(contxt:contxt, userEmail: cartItem.userEmail!)
         } catch {
             print("Entity creation failed")
         }
     }
     
     
-    func getItems(contxt:NSManagedObjectContext) -> [CartItem] {
+    func getItems(contxt:NSManagedObjectContext, userEmail:String) -> [CartItem] {
         var itemArr = [CartItem]()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        request.predicate = NSPredicate(format: "useremail=%@", userEmail)
         
         do {
             let result = try contxt.fetch(request) as! [NSManagedObject]
@@ -237,15 +239,15 @@ class Database {
     }
     
     
-    func getItem(contxt:NSManagedObjectContext, name:String) -> CartItem{
+    func getItem(contxt:NSManagedObjectContext, name:String, userEmail:String) -> CartItem{
         var item:CartItem?
         
         // check all items
-        getItems(contxt: contxt)
+        getItems(contxt: contxt, userEmail: userEmail)
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
         
-        request.predicate = NSPredicate(format: "productname=%@", name)
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [NSPredicate(format: "useremail=%@", userEmail), NSPredicate(format: "productname=%@", name)])
         
         do {
             let result = try contxt.fetch(request) as! [NSManagedObject]
@@ -262,11 +264,11 @@ class Database {
     }
     
     
-    func updateQty(contxt:NSManagedObjectContext, name:String, newQty:Int, newPrice:Int){
+    func updateQty(contxt:NSManagedObjectContext, userEmail:String, name:String, newQty:Int, newPrice:Int){
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
         
-        request.predicate = NSPredicate(format: "productname=%@", name)
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [NSPredicate(format: "useremail=%@", userEmail), NSPredicate(format: "productname=%@", name)])
         
         do {
             let result = try contxt.fetch(request) as! [NSManagedObject]
@@ -281,7 +283,7 @@ class Database {
             print("Data update failure")
         }
         
-        getItems(contxt: contxt)
+//        getItems(contxt: contxt, userEmail: <#T##String#>)
     }
     
     
@@ -298,6 +300,27 @@ class Database {
             try contxt.save()
         } catch {
             print("Data deletion failure.")
+        }
+    }
+    
+    func updateCartItemsAfterProduct(contxt:NSManagedObjectContext, newProduct:Item, oldProductName:String){
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        request.predicate = NSPredicate(format: "productname=%@", oldProductName)
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                let qty = data.value(forKey: "qty")
+                data.setValue(newProduct.name, forKey: "productname")
+                data.setValue(qty as! Int * newProduct.price!, forKey: "price")
+            }
+            
+            try contxt.save()
+        } catch {
+            print("Data update failure.")
         }
     }
 }

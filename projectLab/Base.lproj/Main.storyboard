@@ -611,7 +611,7 @@
         <!--Transaction-->
         <scene sceneID="Xmg-Mh-TaE">
             <objects>
-                <viewController title="Transaction" id="hXq-Iz-h3Q" sceneMemberID="viewController">
+                <viewController title="Transaction" id="hXq-Iz-h3Q" customClass="CartViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GiI-Dq-gwN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -638,7 +638,7 @@
                                 <rect key="frame" x="25" y="88" width="343" height="545"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="180" id="MkF-Vd-ziG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="180" id="MkF-Vd-ziG" customClass="CartTableViewCell" customModule="projectLab" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="343" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MkF-Vd-ziG" id="q76-D7-G8P">
@@ -695,6 +695,13 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="GCi-x0-lpg" secondAttribute="trailing" constant="88" id="zUx-85-T49"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productCategory" destination="EbB-47-TIa" id="nS5-Jl-CGV"/>
+                                            <outlet property="productImage" destination="0im-64-Y5x" id="Flu-rA-uj4"/>
+                                            <outlet property="productName" destination="uqf-Lm-8Lr" id="NCU-PE-hFV"/>
+                                            <outlet property="productPrice" destination="GCi-x0-lpg" id="j02-jP-7Q6"/>
+                                            <outlet property="qty" destination="nV6-ON-JBn" id="LxG-4F-zDt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -726,10 +733,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Transaction" image="cart.fill" catalog="system" id="RB1-hR-7YS"/>
+                    <connections>
+                        <outlet property="cartTable" destination="NC7-rl-Bjj" id="pf0-AH-EdE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lv-9p-9hp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2612.9770992366412" y="355.63380281690144"/>
+            <point key="canvasLocation" x="2630" y="378"/>
         </scene>
         <!--Home-->
         <scene sceneID="Vvt-Gp-dOK">

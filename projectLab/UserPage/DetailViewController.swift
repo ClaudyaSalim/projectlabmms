@@ -79,7 +79,7 @@ class DetailViewController: UIViewController {
         
         
         let cartItem = CartItem(userEmail: email!, productName: item!.name!, qty: qty, price: item!.price!*qty)
-        let itemFound = db.getItem(contxt: contxt, name: cartItem.productName!)
+        let itemFound = db.getItem(contxt: contxt, name: cartItem.productName!, userEmail: email!)
         print("This item is in cart", itemFound)
         
         // kalo ada barang yg sama ditambahin ke cart nanti jatuhnya update quantity
@@ -87,7 +87,7 @@ class DetailViewController: UIViewController {
         if (itemFound.productName != nil){
             // update database
             print("update")
-            db.updateQty(contxt: contxt, name: item!.name!, newQty: qty, newPrice: qty * item!.price!)
+            db.updateQty(contxt: contxt, userEmail: email!, name: item!.name!, newQty: qty, newPrice: qty * item!.price!)
         }
         else {
             // insert to cart
