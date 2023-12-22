@@ -261,15 +261,11 @@
         <!--Add Item Admin View Controller-->
         <scene sceneID="0Eq-Vw-Hn2">
             <objects>
-                <viewController id="y7H-iw-oZt" customClass="AddItemAdminViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addAdminItem" id="y7H-iw-oZt" customClass="AddItemAdminViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JYg-Gf-HHN">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bggameHI-admin" translatesAutoresizingMaskIntoConstraints="NO" id="f9B-jj-0xL">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfJ-p2-gK2">
                                 <rect key="frame" x="16" y="59" width="361" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
@@ -327,10 +323,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXd-bq-FB7">
-                                <rect key="frame" x="16" y="489.00000000000006" width="361" height="174.66666666666669"/>
+                                <rect key="frame" x="16" y="489" width="361" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="94V-g5-B0U"/>
+                                    <constraint firstAttribute="height" constant="200" id="DHe-NG-LMs"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eq-NG-y6e">
-                                <rect key="frame" x="16" y="673.66666666666663" width="361" height="34.333333333333371"/>
+                                <rect key="frame" x="16" y="699" width="361" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system" title=" Add Image"/>
                                 <connections>
@@ -338,8 +338,8 @@
                                     <action selector="btnImagePicker:" destination="0Y0-x6-3TP" eventType="touchUpInside" id="RlL-Tc-qAg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foK-sY-sMD">
-                                <rect key="frame" x="112" y="716" width="168" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foK-sY-sMD">
+                                <rect key="frame" x="154" y="783" width="85" height="35"/>
                                 <color key="tintColor" red="0.98531919720000005" green="0.68380373719999998" blue="0.2068267167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm">
@@ -369,15 +369,14 @@
                             <constraint firstItem="gSb-7r-7Nd" firstAttribute="leading" secondItem="Wtp-6r-Qb8" secondAttribute="leading" constant="16" id="Swk-Tu-fLf"/>
                             <constraint firstItem="Wtp-6r-Qb8" firstAttribute="trailing" secondItem="gSb-7r-7Nd" secondAttribute="trailing" constant="16" id="T0B-Bn-vkC"/>
                             <constraint firstItem="Wtp-6r-Qb8" firstAttribute="trailing" secondItem="cEc-X5-gNb" secondAttribute="trailing" constant="16" id="TgN-wG-ItM"/>
-                            <constraint firstAttribute="bottom" secondItem="foK-sY-sMD" secondAttribute="bottom" constant="20" id="UDU-0g-bBU"/>
                             <constraint firstItem="Qgf-Ty-U1D" firstAttribute="top" secondItem="fYV-bw-edC" secondAttribute="bottom" constant="20" id="UpQ-6H-Cce"/>
                             <constraint firstItem="Wtp-6r-Qb8" firstAttribute="trailing" secondItem="aT4-22-iuS" secondAttribute="trailing" constant="16" id="Vfz-vD-h7B"/>
                             <constraint firstItem="cEc-X5-gNb" firstAttribute="leading" secondItem="Wtp-6r-Qb8" secondAttribute="leading" constant="16" id="WIR-yl-BZv"/>
-                            <constraint firstItem="foK-sY-sMD" firstAttribute="centerX" secondItem="JYg-Gf-HHN" secondAttribute="centerX" id="WeI-ce-6WJ"/>
                             <constraint firstItem="gSb-7r-7Nd" firstAttribute="top" secondItem="aT4-22-iuS" secondAttribute="bottom" constant="20" id="ZJK-aR-WRZ"/>
+                            <constraint firstItem="Wtp-6r-Qb8" firstAttribute="bottom" secondItem="foK-sY-sMD" secondAttribute="bottom" id="ZyJ-ho-knr"/>
+                            <constraint firstItem="foK-sY-sMD" firstAttribute="centerX" secondItem="JYg-Gf-HHN" secondAttribute="centerX" id="aH5-zz-XRG"/>
                             <constraint firstItem="fYV-bw-edC" firstAttribute="top" secondItem="gSb-7r-7Nd" secondAttribute="bottom" constant="10" id="alA-8H-gGI"/>
                             <constraint firstItem="iGN-B1-c06" firstAttribute="top" secondItem="DfJ-p2-gK2" secondAttribute="bottom" constant="16" id="cHo-aw-45k"/>
-                            <constraint firstItem="foK-sY-sMD" firstAttribute="top" secondItem="0eq-NG-y6e" secondAttribute="bottom" constant="20" id="hYp-6r-G5d"/>
                             <constraint firstItem="DfJ-p2-gK2" firstAttribute="top" secondItem="Wtp-6r-Qb8" secondAttribute="top" id="jpQ-VE-nu8"/>
                             <constraint firstItem="sXd-bq-FB7" firstAttribute="top" secondItem="CMV-RZ-thd" secondAttribute="bottom" constant="10" id="lYN-PY-Y8V"/>
                             <constraint firstItem="Wtp-6r-Qb8" firstAttribute="trailing" secondItem="sXd-bq-FB7" secondAttribute="trailing" constant="16" id="leH-8W-oS2"/>
@@ -1072,7 +1071,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="y7H-iw-oZt" kind="show" id="YZ5-pG-IKC"/>
+                                    <action selector="onAddItemClick:" destination="pfQ-Ha-vmq" eventType="touchUpInside" id="aN6-I6-4sT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaK-L9-Gvh">

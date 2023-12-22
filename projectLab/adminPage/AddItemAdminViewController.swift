@@ -46,23 +46,6 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         let backgroundImageView = UIImageView()
-        
-        if let backgroundImage = UIImage(named: "bggameHI-admin") {
-                    backgroundImageView.image = backgroundImage
-                    backgroundImageView.contentMode = .scaleAspectFill
-                    backgroundImageView.clipsToBounds = true
-                    backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-            
-                    view.addSubview(backgroundImageView)
-
-                    NSLayoutConstraint.activate([
-                        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
-                        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-                    ])
-                }
-        
 
         // setup core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -165,5 +148,6 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
     func getDocumentsDirectoryURL() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
+    
 
 }

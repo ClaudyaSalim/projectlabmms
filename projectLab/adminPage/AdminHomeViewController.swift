@@ -90,6 +90,14 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
+    @IBAction func onAddItemClick(_ sender: Any) {
+        if let nextView = self.storyboard?.instantiateViewController(withIdentifier: "addAdminItem") {
+                let addAdminView = nextView as! AddItemAdminViewController
+                self.navigationController?.setViewControllers([addAdminView], animated: true)
+        }
+    }
+    
+    
     
     @IBAction func onClickLogout(_ sender: Any) {
         
