@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -266,6 +267,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bggameHI-admin" translatesAutoresizingMaskIntoConstraints="NO" id="3gj-Y2-hRh">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSb-7r-7Nd">
+                                <rect key="frame" x="16" y="279" width="361" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfJ-p2-gK2">
                                 <rect key="frame" x="16" y="59" width="361" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
@@ -299,12 +310,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSb-7r-7Nd">
-                                <rect key="frame" x="16" y="279" width="361" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: description of the game" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eph-on-4EC">
                                 <rect key="frame" x="16" y="401" width="361" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -610,7 +615,16 @@
                             <constraint firstItem="QmR-nc-KyS" firstAttribute="trailing" secondItem="9xl-qJ-Xtr" secondAttribute="trailing" constant="136" id="teY-gA-8ah"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="YC5-Ng-3DF"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="YC5-Ng-3DF">
+                        <imageReference key="image" image="person.fill" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color systemColor="labelColor"/>
+                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                        <color key="badgeColor" systemColor="systemPurpleColor"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="emailProfile" destination="dN1-1P-SuB" id="THf-NY-h9n"/>
                         <outlet property="passwordProfile" destination="DP9-GL-ndb" id="1Th-Wp-cvb"/>
@@ -624,7 +638,7 @@
         <!--Transaction-->
         <scene sceneID="Xmg-Mh-TaE">
             <objects>
-                <viewController title="Transaction" id="hXq-Iz-h3Q" customClass="CartViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" title="Transaction" id="hXq-Iz-h3Q" customClass="CartViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GiI-Dq-gwN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -723,6 +737,9 @@
                                 <color key="tintColor" red="0.98531919720000005" green="0.68380373719999998" blue="0.2068267167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmLabel:" destination="hXq-Iz-h3Q" eventType="touchUpInside" id="SK7-jW-OFX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hPu-nm-ZYQ"/>
@@ -745,7 +762,16 @@
                             <constraint firstItem="hPu-nm-ZYQ" firstAttribute="trailing" secondItem="usT-8l-vzK" secondAttribute="trailing" constant="16" id="um7-hP-Ddo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Transaction" image="cart.fill" catalog="system" id="RB1-hR-7YS"/>
+                    <tabBarItem key="tabBarItem" title="Transaction" id="RB1-hR-7YS">
+                        <imageReference key="image" image="cart.fill" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color systemColor="labelColor"/>
+                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                        <color key="badgeColor" systemColor="systemPurpleColor"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="cartTable" destination="NC7-rl-Bjj" id="pf0-AH-EdE"/>
                     </connections>
@@ -757,7 +783,7 @@
         <!--Home-->
         <scene sceneID="Vvt-Gp-dOK">
             <objects>
-                <viewController id="2SX-BL-4Ly" customClass="HomeViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="2SX-BL-4Ly" customClass="HomeViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jGS-v4-K9g">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -845,7 +871,16 @@
                             <constraint firstItem="mLA-st-zJf" firstAttribute="trailing" secondItem="vH7-29-DLc" secondAttribute="trailing" constant="25" id="fyF-4S-RCd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="RZb-SN-wdL"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="RZb-SN-wdL">
+                        <imageReference key="image" image="house.fill" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="greetingLabel" destination="vH7-29-DLc" id="AX3-ki-F8i"/>
                         <outlet property="productTable" destination="9Ym-F1-44D" id="geC-re-l6b"/>
@@ -961,6 +996,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOY-vT-P1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3458.7786259541981" y="-282.3943661971831"/>
+        </scene>
+        <!--Confirm Payment-->
+        <scene sceneID="ca8-iU-9Wy">
+            <objects>
+                <viewController storyboardIdentifier="confirmViewController" title="Confirm Payment" id="d6N-2h-1Be" customClass="ConfirmViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cab-2F-44D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bggameHI" translatesAutoresizingMaskIntoConstraints="NO" id="b7J-0s-OPb">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="confirm" translatesAutoresizingMaskIntoConstraints="NO" id="WUV-ni-pwk">
+                                <rect key="frame" x="-46" y="116" width="500" height="432"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payment Successful!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fma-9g-u28">
+                                <rect key="frame" x="50" y="494" width="307" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" red="0.1891639531" green="0.74869918820000003" blue="0.075036577879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWe-V7-pvq">
+                                <rect key="frame" x="94" y="556" width="205" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back to Home">
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cartList:" destination="d6N-2h-1Be" eventType="touchUpInside" id="sRu-il-NUy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TAc-TR-DQg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0i9-tS-Rqp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4420.6106870229005" y="-282.3943661971831"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="G5d-US-y0q">
@@ -1120,6 +1198,7 @@
         <image name="bggameHI-regis" width="393" height="852"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="confirm" width="500" height="500"/>
         <image name="exclamationmark.octagon" catalog="system" width="128" height="112"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
@@ -1127,8 +1206,17 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
