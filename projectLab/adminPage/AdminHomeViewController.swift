@@ -35,7 +35,6 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
         
         productTable.dataSource = self
         productTable.delegate = self
-//        productTable.isEditing = true
         
         initData()
     }
@@ -49,19 +48,6 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        item = productList[indexPath.row]
-        
-        if let nextview = storyboard?.instantiateViewController(withIdentifier: "updateItemAdmin") {
-            let detailView = nextview as! UpdateItemAdminViewController
-
-            detailView.item = item // atau tipe data dari variabelnya
-
-            navigationController?.pushViewController(detailView, animated: true)
-        }
-    }
-    
 //  delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -69,6 +55,20 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
             productList.remove(at: indexPath.row)
             
             productTable.reloadData()
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        item = productList[indexPath.row]
+        
+        if let nextview = storyboard?.instantiateViewController(withIdentifier: "updateItemAdmin") {
+            let updateView = nextview as! UpdateItemAdminViewController
+
+            updateView.item = item
+
+            navigationController?.pushViewController(updateView, animated: true)
         }
     }
     
@@ -113,14 +113,6 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
         present(AlertLogOut, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
