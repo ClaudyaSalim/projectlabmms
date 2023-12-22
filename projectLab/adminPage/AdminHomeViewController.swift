@@ -35,7 +35,6 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
         
         productTable.dataSource = self
         productTable.delegate = self
-//        productTable.isEditing = true
         
         initData()
     }
@@ -49,19 +48,6 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        item = productList[indexPath.row]
-        
-        if let nextview = storyboard?.instantiateViewController(withIdentifier: "updateItemAdmin") {
-            let detailView = nextview as! UpdateItemAdminViewController
-
-            detailView.item = item // atau tipe data dari variabelnya
-
-            navigationController?.pushViewController(detailView, animated: true)
-        }
-    }
-    
 //  delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -74,8 +60,6 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("masuk masuk masuk")
         
         item = productList[indexPath.row]
         
