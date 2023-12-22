@@ -183,6 +183,9 @@
                                 <color key="tintColor" red="0.98531919720000005" green="0.68380373719999998" blue="0.2068267167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
+                                <connections>
+                                    <action selector="onConfirmClick:" destination="0Y0-x6-3TP" eventType="touchUpInside" id="64u-L9-L2Z"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ik4-71-nGx">
                                 <rect key="frame" x="16" y="488.66666666666674" width="361" height="215"/>
@@ -253,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWS-og-LCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1682" y="-847"/>
+            <point key="canvasLocation" x="1682" y="-835"/>
         </scene>
         <!--Add Item Admin View Controller-->
         <scene sceneID="0Eq-Vw-Hn2">
@@ -396,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gvg-6y-mtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="769" y="-847"/>
+            <point key="canvasLocation" x="769" y="-835"/>
         </scene>
         <!--Regis View Controller-->
         <scene sceneID="yfW-hx-iBm">

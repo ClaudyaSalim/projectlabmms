@@ -169,6 +169,30 @@ class Database {
     }
     
     
+    func updateProduct(contxt:NSManagedObjectContext, newProduct:Item, oldProduct:Item){
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        
+        request.predicate = NSPredicate(format: "name=%@", oldProduct.name!)
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                data.setValue(newProduct.name, forKey: "name")
+                data.setValue(newProduct.category, forKey: "category")
+                data.setValue(newProduct.price, forKey: "price")
+                data.setValue(newProduct.desc, forKey: "desc")
+                data.setValue(newProduct.img, forKey: "image")
+            }
+            
+            try contxt.save()
+        } catch {
+            print("Data update failure.")
+        }
+    }
+    
+    
     func insertToCart(contxt:NSManagedObjectContext, cartItem:CartItem) {
         
         var itemArr = [CartItem]()
@@ -258,5 +282,22 @@ class Database {
         }
         
         getItems(contxt: contxt)
+    }
+    
+    
+    func deleteCart(contxt:NSManagedObjectContext){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        do {
+            let result = try contxt.fetch(request) as! [NSManagedObject]
+            
+            for data in result {
+                contxt.delete(data)
+            }
+            
+            try contxt.save()
+        } catch {
+            print("Data deletion failure.")
+        }
     }
 }
