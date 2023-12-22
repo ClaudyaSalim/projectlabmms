@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
