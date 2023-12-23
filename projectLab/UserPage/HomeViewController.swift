@@ -46,9 +46,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         productList = db.getProducts(contxt: contxt)
         
-//        let existingProducts = db.getProducts(contxt: contxt)
-//        productList.append(contentsOf: existingProducts)
-//
         productTable.reloadData()
     }
     

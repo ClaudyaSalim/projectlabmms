@@ -16,7 +16,6 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     
-    //
     var imagePath : String!
     var imageIteration: Int = 1
     
@@ -33,7 +32,6 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
         guard let image = info[.editedImage] as? UIImage else {return}
         imageView.image = image
         
-        //
         saveImageToDocumentDirectory(image: image, fileName: "yourFileName_\(imageIteration).jpg")
         dismiss(animated: true)
     }
@@ -73,7 +71,6 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
                showAlert(msg: "Please select an image.")
                return
            }
-//        print(pathImage)
         
         let imageName = "yourFileName_\(imageIteration).jpg"
         
@@ -105,16 +102,12 @@ class AddItemAdminViewController: UIViewController, UIImagePickerControllerDeleg
     
     func showAlert(msg:String){
         
-        // define alert
         let alert = UIAlertController(title: "Add Product Failed", message: msg, preferredStyle: .alert)
         
-        // define action
         let okAction = UIAlertAction(title: "OK", style: .cancel)
         
-        // add action to alert
         alert.addAction(okAction)
         
-        // show alert
         present(alert, animated: true)
     }
     

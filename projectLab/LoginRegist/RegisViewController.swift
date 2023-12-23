@@ -30,7 +30,6 @@ class RegisViewController: UIViewController {
         
         var newPerson: Person?
         
-        // ambil dari text field
         let name = nameField.text!
         let email = emailField.text!
         let pass = passField.text!
@@ -104,16 +103,12 @@ class RegisViewController: UIViewController {
     
     func showAlert(msg:String){
         
-        // define alert
         let alert = UIAlertController(title: "Login Failed", message: msg, preferredStyle: .alert)
         
-        // define action
         let okAction = UIAlertAction(title: "OK", style: .cancel)
         
-        // add action to alert
         alert.addAction(okAction)
         
-        // show alert
         present(alert, animated: true)
     }
     

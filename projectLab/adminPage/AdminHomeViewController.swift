@@ -27,7 +27,6 @@ class AdminHomeViewController: UIViewController, UITableViewDelegate, UITableVie
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         contxt = appDelegate.persistentContainer.viewContext
 
-        // Do any additional setup after loading the view.
         let email = UserDefaults.standard.string(forKey: "userEmail")
         activeUser = db.getUser(contxt: contxt, email: email!)
         print(activeUser!.name)

@@ -68,10 +68,6 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
             return
         }
         
-//        guard let pathImage = imagePath else {
-//               showAlert(msg: "Please select an image.")
-//               return
-//           }
         
         let pathImage = imagePath
         
@@ -116,16 +112,12 @@ class UpdateItemAdminViewController: UIViewController , UIImagePickerControllerD
     
     func showAlert(msg:String){
         
-        // define alert
         let alert = UIAlertController(title: "Update Product Failed", message: msg, preferredStyle: .alert)
         
-        // define action
         let okAction = UIAlertAction(title: "OK", style: .cancel)
         
-        // add action to alert
         alert.addAction(okAction)
         
-        // show alert
         present(alert, animated: true)
     }
     
