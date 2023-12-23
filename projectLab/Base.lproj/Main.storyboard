@@ -772,6 +772,57 @@
             </objects>
             <point key="canvasLocation" x="2630" y="378"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="qcx-4H-F8Z">
+            <objects>
+                <viewController id="jWc-8S-MwX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d4q-sa-RgU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bggameHI-profile" translatesAutoresizingMaskIntoConstraints="NO" id="Ots-yO-05p">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3f-rq-YMY">
+                                <rect key="frame" x="128" y="114" width="137" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GameHI is a mobile game management application sold by GameHI. You can buy mobile games and view mobile games in GameHI." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mL-3m-Hsg">
+                                <rect key="frame" x="60" y="290" width="273" height="119.66666666666669"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HX-yw-0bJ">
+                                <rect key="frame" x="100" y="469.66666666666669" width="193" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back to Home">
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DLY-yX-Rgf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1HX-yw-0bJ" firstAttribute="top" secondItem="7mL-3m-Hsg" secondAttribute="bottom" constant="60" id="2re-8B-5ZG"/>
+                            <constraint firstItem="DLY-yX-Rgf" firstAttribute="trailing" secondItem="U3f-rq-YMY" secondAttribute="trailing" constant="128" id="APt-eM-RzL"/>
+                            <constraint firstItem="DLY-yX-Rgf" firstAttribute="trailing" secondItem="7mL-3m-Hsg" secondAttribute="trailing" constant="60" id="AQN-5i-Orz"/>
+                            <constraint firstItem="U3f-rq-YMY" firstAttribute="top" secondItem="DLY-yX-Rgf" secondAttribute="top" constant="55" id="QJW-Yp-ZkM"/>
+                            <constraint firstItem="DLY-yX-Rgf" firstAttribute="trailing" secondItem="1HX-yw-0bJ" secondAttribute="trailing" constant="100" id="UBf-aT-sjg"/>
+                            <constraint firstItem="7mL-3m-Hsg" firstAttribute="leading" secondItem="DLY-yX-Rgf" secondAttribute="leading" constant="60" id="aj8-NQ-Egu"/>
+                            <constraint firstItem="U3f-rq-YMY" firstAttribute="leading" secondItem="DLY-yX-Rgf" secondAttribute="leading" constant="128" id="l6E-oe-8Vl"/>
+                            <constraint firstItem="1HX-yw-0bJ" firstAttribute="leading" secondItem="DLY-yX-Rgf" secondAttribute="leading" constant="100" id="tRG-3Y-qUO"/>
+                            <constraint firstItem="7mL-3m-Hsg" firstAttribute="top" secondItem="U3f-rq-YMY" secondAttribute="bottom" constant="150" id="uRX-fD-Zpw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKN-lU-7pt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1681.679389312977" y="1559.8591549295775"/>
+        </scene>
         <!--Home-->
         <scene sceneID="Vvt-Gp-dOK">
             <objects>

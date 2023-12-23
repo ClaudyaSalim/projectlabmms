@@ -22,6 +22,7 @@ class ConfirmViewController: UIViewController {
             let tabPageView = mainPage as! TabViewController
             
             navigationController?.setViewControllers([tabPageView], animated: true)
+            
         }
         
     }
