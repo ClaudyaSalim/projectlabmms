@@ -603,7 +603,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="exclamationmark.octagon" catalog="system" title="About Us"/>
                                 <connections>
-                                    <action selector="aboutusOnClicked:" destination="giX-Fj-JuA" eventType="touchUpInside" id="gTS-P1-UXq"/>
+                                    <segue destination="jWc-8S-MwX" kind="show" id="cIi-b6-GZ3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -772,12 +772,12 @@
             </objects>
             <point key="canvasLocation" x="2630" y="378"/>
         </scene>
-        <!--View Controller-->
+        <!--About Us View Controller-->
         <scene sceneID="qcx-4H-F8Z">
             <objects>
-                <viewController id="jWc-8S-MwX" sceneMemberID="viewController">
+                <viewController id="jWc-8S-MwX" customClass="AboutUsViewController" customModule="projectLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d4q-sa-RgU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bggameHI-profile" translatesAutoresizingMaskIntoConstraints="NO" id="Ots-yO-05p">
@@ -799,9 +799,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HX-yw-0bJ">
                                 <rect key="frame" x="100" y="469.66666666666669" width="193" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Back to Home">
+                                <buttonConfiguration key="configuration" style="filled" title="Back to Profile">
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onBackClick:" destination="jWc-8S-MwX" eventType="touchUpInside" id="Tec-8c-dXT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DLY-yX-Rgf"/>
@@ -818,6 +821,7 @@
                             <constraint firstItem="7mL-3m-Hsg" firstAttribute="top" secondItem="U3f-rq-YMY" secondAttribute="bottom" constant="150" id="uRX-fD-Zpw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Z3c-gD-oD3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKN-lU-7pt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

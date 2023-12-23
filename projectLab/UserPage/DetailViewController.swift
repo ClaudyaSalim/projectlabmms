@@ -64,7 +64,7 @@ class DetailViewController: UIViewController {
         }
         // tambahin validasi di qty biar ga nil dan nol
         
-        if qty == 0 {
+        if qty <= 0 {
             let alerts = UIAlertController(title: "Error", message: "Quantity must be more than 0", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alerts.addAction(okAction)

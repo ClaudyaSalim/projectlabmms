@@ -10,6 +10,7 @@
 		0503B10B2B1D96910073D1A0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503B10A2B1D96910073D1A0 /* Model.swift */; };
 		05080C512B295FE900FA0502 /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080C502B295FE900FA0502 /* AdminHomeViewController.swift */; };
 		0551AC422B35932300CA2A10 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0551AC412B35932300CA2A10 /* ConfirmViewController.swift */; };
+		0551AC442B3669AE00CA2A10 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0551AC432B3669AE00CA2A10 /* AboutUsViewController.swift */; };
 		055EE6EF2B26F25500947151 /* UpdateItemAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EE6EE2B26F25500947151 /* UpdateItemAdminViewController.swift */; };
 		056798EF2B21908500A515A4 /* DatabaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056798EE2B21908500A515A4 /* DatabaseFunctions.swift */; };
 		056798F12B21927300A515A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056798F02B21927200A515A4 /* HomeViewController.swift */; };
@@ -35,6 +36,7 @@
 		0503B10A2B1D96910073D1A0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		05080C502B295FE900FA0502 /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
 		0551AC412B35932300CA2A10 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		0551AC432B3669AE00CA2A10 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		055EE6EE2B26F25500947151 /* UpdateItemAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemAdminViewController.swift; sourceTree = "<group>"; };
 		056798EE2B21908500A515A4 /* DatabaseFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseFunctions.swift; sourceTree = "<group>"; };
 		056798F02B21927200A515A4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -83,12 +85,15 @@
 		05D3C8E22B353A8C00904F8D /* UserPage */ = {
 			isa = PBXGroup;
 			children = (
+				05A5B2AD2B1B3759000C6FF3 /* TabViewController.swift */,
+				0551AC412B35932300CA2A10 /* ConfirmViewController.swift */,
 				056798F02B21927200A515A4 /* HomeViewController.swift */,
 				05B790E22B2C577A0069764B /* ProductTableViewCell.swift */,
 				05B9191C2B2D81CC00EEA7E8 /* ProfileViewController.swift */,
 				05B790E42B2D39940069764B /* DetailViewController.swift */,
 				05781A032B3553EA00D940F8 /* CartViewController.swift */,
 				05781A052B3557A600D940F8 /* CartTableViewCell.swift */,
+				0551AC432B3669AE00CA2A10 /* AboutUsViewController.swift */,
 			);
 			path = UserPage;
 			sourceTree = "<group>";
@@ -125,10 +130,8 @@
 				05D3C8E22B353A8C00904F8D /* UserPage */,
 				05D3C8E42B353AE100904F8D /* LoginRegist */,
 				05F5DAF32B08A5720028DB4B /* AppDelegate.swift */,
-				05A5B2AD2B1B3759000C6FF3 /* TabViewController.swift */,
 				05F5DAF52B08A5720028DB4B /* SceneDelegate.swift */,
 				05F5DAF92B08A5720028DB4B /* Main.storyboard */,
-				0551AC412B35932300CA2A10 /* ConfirmViewController.swift */,
 				05A5B2852B1B2DA9000C6FF3 /* projectLab.xcdatamodeld */,
 				05F5DAFC2B08A5720028DB4B /* Assets.xcassets */,
 				05F5DAFE2B08A5720028DB4B /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0551AC442B3669AE00CA2A10 /* AboutUsViewController.swift in Sources */,
 				055EE6EF2B26F25500947151 /* UpdateItemAdminViewController.swift in Sources */,
 				056798EF2B21908500A515A4 /* DatabaseFunctions.swift in Sources */,
 				05B790E12B2C3A4A0069764B /* AddItemAdminViewController.swift in Sources */,
