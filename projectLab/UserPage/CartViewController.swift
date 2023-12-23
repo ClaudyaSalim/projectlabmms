@@ -68,6 +68,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
                 db.deleteCartByUserProduct(contxt: contxt!, productName: cartList[indexPath.row].productName!, userEmail: activeUser!.email!)
+                price -= cartList[indexPath.row].price!
+                totalPayment.text = "Rp\(price)"
                 cartList.remove(at: indexPath.row)
                 cartTable.reloadData()
             }
